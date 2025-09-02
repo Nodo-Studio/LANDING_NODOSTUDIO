@@ -1,0 +1,18 @@
+@use 'variables' as *;
+
+// Gradient Background
+// Ejemplo de uso: @include gradientBg(to right, hsl(200deg 80% 50%), hsl(300deg 70% 40%));GradientBackgroundEjemplodeuso
+
+@mixin gradientBg($direction, $colors...) {
+  background-image: linear-gradient($direction, $colors...);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+
+//
+@mixin glassBlur($color: var(--color-bg-primary), $opacity: 0.09, $blur: 20px) {
+  background: ($color, $opacity);
+  backdrop-filter: blur($blur);
+}

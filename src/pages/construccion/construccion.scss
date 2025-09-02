@@ -1,0 +1,139 @@
+@use '../../styles/abstracts/index' as * ;
+
+.container-hero {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  color: var(--color-bg-primary);
+  // Video de fondo
+  &-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1; 
+
+    // El video ocupa todo el espacio
+    .hero-video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .hero-image-bg {
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .video-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.05);
+      z-index: 2;
+    }
+  }
+
+
+  &-content {
+    position: absolute;
+    bottom: 0; 
+    left: 0;
+    width: 100%;
+    height: 55%;
+    z-index: 3;     
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--color-bg-primary) ;
+    
+    @include glassBlur();
+
+    &-left {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: space-between;
+      padding: 15px;
+    }
+
+    &-info{
+      display: flex;
+      flex-direction: column;
+      align-items: left;
+      width: 100%;
+      &-title{ 
+        height: 100%;
+        h2 {
+          font-size: 3.5rem;
+        }
+        p {
+          font-size: 1.5rem;
+          font-weight: 100;
+          width: 100%;
+        }
+      }
+
+      &-cards {
+        height: 100%;
+        display: flex;
+        gap: 35px;
+
+        .card {
+          width: 30%; 
+          display: flex;
+          flex-direction: column;
+          gap: 1.5rem;
+          border-bottom: 3px solid var(--color-line);
+          span {
+            font-size: 1.5rem;
+            font-weight: 800;
+          }
+          p{
+            font-weight: 200;
+            font-size: 1rem;
+          }
+        }
+
+      }
+    }
+
+    &-reloj{
+      width: 30%;
+      display: flex;
+      flex-direction: column;
+      align-items: end;
+      gap: 15px;
+
+      p {
+        font-size: 0.8rem;
+      }
+
+    }
+
+    &-social{
+      width: 100%;
+      height: auto;
+      padding: 15px 15px 0px 15px;
+      display: flex;
+      justify-content: star;
+      ul{
+        list-style-type: none;
+        display: flex;
+        gap: 25px;
+
+        li {
+          font-size: 2.5rem;
+        }
+      }
+    }
+
+  }
+}

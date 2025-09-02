@@ -1,0 +1,56 @@
+// Importando Abstract
+@use './abstracts/index' as *;
+
+// Importando base
+@use './base/index' as *;
+
+body {
+  height: 100%;
+  width: 100%;
+  font-family: $font-family;
+  background-color: var(--color-bg-primary);
+  color: var(--color-secondary);
+  transition:
+    background-color 0.3s,
+    color 0.3s;
+}
+
+// Aplicar el tema al body
+body.light {
+  @extend :root;
+}
+
+body.dark {
+  @extend [data-theme='dark'];
+}
+
+/* Estilos para navegadores WebKit (Chrome, Safari) */
+html::-webkit-scrollbar {
+  width: 3px;
+
+  /* Más delgado que los 5px actuales */
+}
+
+html::-webkit-scrollbar-track {
+  background: var(--color-bg-primary);
+  border-radius: 10px;
+
+  /* Redondeo suave para la pista */
+}
+
+html::-webkit-scrollbar-thumb {
+  background: #eb2525;
+  border-radius: 50%;
+
+  /* Bordes completamente redondeados para el thumb */
+}
+
+html::-webkit-scrollbar-thumb:hover {
+  background: #af1e1e;
+}
+
+/* Estilos para Firefox */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-primary) var(--color-bg-primary);
+}

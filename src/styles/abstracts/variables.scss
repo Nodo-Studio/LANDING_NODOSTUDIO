@@ -1,0 +1,129 @@
+// ===============================================
+// NODOSTUDIO - CORPORATE TRUST DESIGN SYSTEM
+// ===============================================
+
+// Font Family
+$font-family: "Manrope", sans-serif;
+
+// Color constants
+$color-font-alert: #f3f9ff;
+
+// Spacing
+$padding-input: 1rem;
+
+// Border Radius
+$radius-input: 6px;
+$radius-container: 12px;
+
+// ===============================================
+// CSS CUSTOM PROPERTIE
+// ===============================================
+
+:root {
+ // PRIMARY COLORS - Corporate Trust Blue
+  --color-primary: hsl(199deg 85% 35%); // #013D5A - Azul corporativo principal
+  --color-secondary: hsl(207deg 88% 12%); // #051B2C - Azul profundo secundario
+  
+  // BACKGROUND COLORS - Light theme
+  --color-bg-primary: hsl(210deg 25% 98%); // #F8F9FA - Fondo principal claro
+  --color-bg-secondary: hsl(210deg 17% 94%); // #E2E8F0 - Fondo secundario
+  
+  // ACCENT COLORS - Corporate Trust
+  --color-secondary-logo: hsl(6deg 100% 70%); // #FF6B6B - Rojo coral de acción
+  --color-tertiary: hsl(174deg 72% 56%); // #4ECDC4 - Turquesa de confianza
+  
+  // FONT COLORS
+  --color-font: hsl(210deg 24% 16%); // #334155 - Texto principal
+  --color-font-secondary: hsl(215deg 16% 47%); // #64748B - Texto secundario
+  --color-font-muted: hsl(215deg 20% 65%); // #94A3B8 - Texto deshabilitado
+  
+  // INTERACTIVE STATES
+  --color-line: hsl(215deg 25% 16% / 35%); // Líneas y bordes
+  --color-bg-transparent: hsl(199deg 85% 35% / 5%); // Fondos transparentes
+  --color-hover: hsl(174deg 72% 56% / 10%); // Estados hover
+  --color-focus: hsl(6deg 100% 70% / 20%); // Estados focus
+  
+  // NEUTRAL SCALE
+  --color-text: hsl(199deg 85% 35%); // Texto principal (azul corporativo)
+  --color-third: hsl(210deg 20% 96%); // #F1F5F9 - Fondo terciario
+  --color-fourth: hsl(210deg 25% 98%); // #F8FAFC - Fondo cuaternario
+  --color-fifth: hsl(220deg 14% 96%); // #F1F5F9 - Fondo quinario
+  
+  // INTERACTION STATES
+  --color-bg-transparent-light: hsl(174deg 72% 56% / 8%);
+  --color-hover-secondary: hsl(199deg 85% 35% / 8%);
+  --color-active: hsl(6deg 100% 70% / 15%);
+  
+  // ALERTS - Corporate Trust adapted
+  --color-alert-red: hsl(0deg 84% 60%); // #E55555 - Error suavizado
+  --color-alert-red-bg: hsl(0deg 84% 60% / 10%); // Fondo de error
+  --color-alert-yellow: hsl(38deg 92% 50%); // #F39C12 - Warning dorado
+  --color-alert-yellow-bg: hsl(38deg 92% 50% / 10%); // Fondo warning
+  --color-alert-green: hsl(140deg 69% 58%); // #27AE60 - Success verde
+  --color-alert-green-bg: hsl(140deg 69% 58% / 10%); // Fondo success
+  --color-alert-info: hsl(174deg 72% 56%); // #4ECDC4 - Info turquesa
+  --color-alert-info-bg: hsl(174deg 72% 56% / 10%); // Fondo info
+  
+  // ALERT OPACITY VARIANTS
+  --color-green-alert-opacity: hsl(140deg 69% 58% / 16.6%);
+  --color-red-alert-opacity: hsl(0deg 84% 60% / 16.6%);
+  --color-yellow-alert-opacity: hsl(38deg 92% 50% / 16.6%);
+  --color-blue-alert-opacity: hsl(174deg 72% 56% / 16.6%);
+}
+
+// ===============================================
+// DARK THEME - CORPORATE TRUST
+// ===============================================
+
+[data-theme='dark'] {
+  // PRIMARY COLORS - Inverted for dark mode
+  --color-primary: hsl(210deg 25% 98%); // Texto claro
+  --color-secondary: hsl(210deg 17% 94%); // Texto secundario claro
+  
+  // BACKGROUND COLORS - Dark theme
+  --color-bg-primary: hsl(220deg 39% 11%); // #0F172A - Fondo oscuro principal
+  --color-bg-secondary: hsl(215deg 28% 17%); // #1E293B - Fondo secundario oscuro
+  
+  // ACCENT COLORS - Maintained for brand consistency
+  --color-secondary-logo: hsl(6deg 100% 70%); // #FF6B6B - Mantiene rojo coral
+  --color-tertiary: hsl(174deg 72% 56%); // #4ECDC4 - Mantiene turquesa
+  
+  // FONT COLORS - Inverted
+  --color-font: hsl(210deg 25% 98%); // Texto claro principal
+  --color-font-secondary: hsl(215deg 20% 65%); // #94A3B8 - Texto secundario
+  --color-font-muted: hsl(215deg 16% 47%); // #64748B - Texto deshabilitado
+  
+  // INTERACTIVE STATES - Dark adapted
+  --color-line: hsl(215deg 25% 27% / 50%); // Líneas más visibles en oscuro
+  --color-bg-transparent: hsl(174deg 72% 56% / 8%); // Fondos transparentes
+  --color-hover: hsl(6deg 100% 70% / 15%); // Estados hover más visibles
+  --color-focus: hsl(174deg 72% 56% / 25%); // Estados focus
+  
+  // NEUTRAL SCALE - Dark adapted
+  --color-text: hsl(210deg 25% 98%); // Texto claro
+  --color-third: hsl(215deg 25% 22%); // #334155 - Fondo terciario oscuro
+  --color-fourth: hsl(215deg 28% 17%); // #1E293B - Fondo cuaternario
+  --color-fifth: hsl(220deg 39% 11%); // #0F172A - Fondo más oscuro
+  
+  // INTERACTION STATES - Enhanced for dark mode
+  --color-bg-transparent-light: hsl(174deg 72% 56% / 12%);
+  --color-hover-secondary: hsl(6deg 100% 70% / 12%);
+  --color-active: hsl(174deg 72% 56% / 20%);
+  
+  // ALERTS - Dark mode optimized
+  --color-alert-red: hsl(0deg 84% 65%); // Más claro para contraste
+  --color-alert-red-bg: hsl(0deg 84% 65% / 15%);
+  --color-alert-yellow: hsl(38deg 92% 55%); // Más claro
+  --color-alert-yellow-bg: hsl(38deg 92% 55% / 15%);
+  --color-alert-green: hsl(140deg 69% 63%); // Más claro
+  --color-alert-green-bg: hsl(140deg 69% 63% / 15%);
+  --color-alert-info: hsl(174deg 72% 61%); // Más claro
+  --color-alert-info-bg: hsl(174deg 72% 61% / 15%);
+  
+  // ALERT OPACITY VARIANTS - Dark adapted
+  --color-green-alert-opacity: hsl(140deg 69% 63% / 20%);
+  --color-red-alert-opacity: hsl(0deg 84% 65% / 20%);
+  --color-yellow-alert-opacity: hsl(38deg 92% 55% / 20%);
+  --color-blue-alert-opacity: hsl(174deg 72% 61% / 20%);
+}
+
