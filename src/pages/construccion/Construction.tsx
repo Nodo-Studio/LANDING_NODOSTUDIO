@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { useDocumentHead } from '../../hooks/useDocumentHead'
 import type { VideoSourceProps } from '../../types/video.types';
-import { TiSocialGithubCircular, TiSocialInstagramCircular, TiSocialLinkedinCircular } from "react-icons/ti";
+import { TiSocialFacebookCircular, TiSocialGithubCircular, TiSocialInstagramCircular, TiSocialLinkedinCircular } from "react-icons/ti";
 
 
 import './construccion.scss';
@@ -126,9 +126,27 @@ const Construccion: React.FC = () => {
         </section>
         <div className='container-hero-content-social'>
           <ul>
-            <li><TiSocialGithubCircular /></li>
-            <li><TiSocialLinkedinCircular /></li>
-            <li><TiSocialInstagramCircular /></li>
+            <li>
+              <a href="https://github.com/Nodo-Studio">
+                <TiSocialGithubCircular />
+              </a>
+            </li>
+            <li>
+              <a href="">
+                <TiSocialLinkedinCircular />
+              </a>
+            </li>
+            <li>
+              <a href="https://www.instagram.com/nodostudio.d/">
+                <TiSocialInstagramCircular />
+              </a>
+            </li>
+            <li> 
+              <a href="https://www.facebook.com/profile.php?id=100069583504426">
+                <TiSocialFacebookCircular />
+              </a>
+            </li>    
+
           </ul>
         </div>  
       </div>
