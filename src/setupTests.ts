@@ -1,15 +1,18 @@
+console.log('¡El archivo setupTest.ts se está ejecutando! ...')
+
 import '@testing-library/jest-dom'
-import { vi } from 'vitest'
 
 //Mock window.matchmedia 
-Object.defineProperty(window, 'matchmedia', {
+Object.defineProperty(window, 'matchMedia', {
   writable: true,
-  value: vi.fn().mockImplementation(query => ({
+  value: (query: string ) => ({
     matches: false,
     media: query,
     onchange: null,
-    addEventListener: vi.fn(),
-    removeEventListener: vi.fn(),
-    dispatchEvent: vi.fn(),
-  })),
+    addListener: () => {},
+    removeListener: () => {},
+    addEventListener: () => {},
+    removeEventListener: () => {},
+    dispatchEvent: () => {},
+  }),
 });
