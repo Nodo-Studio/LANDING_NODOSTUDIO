@@ -1,5 +1,3 @@
-console.log('¡El archivo setupTest.ts se está ejecutando! ...')
-
 import '@testing-library/jest-dom'
 
 //Mock window.matchmedia 
