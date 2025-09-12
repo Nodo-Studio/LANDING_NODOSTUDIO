@@ -30,11 +30,24 @@ const Construccion: React.FC = () => {
   useEffect(() => {
     const checkVideoSupport = () => {
       const isDesktop = window.innerWidth > 768;
-      const hasGoodConnection = !('connection' in navigator) || 
-        (navigator as any).connection?.effectiveType === '4g' ||
-        (navigator as any).connection?.downlink > 1.5;
-      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    // 1. Definimos la interfaz aquí
+      interface CustomNavigator extends Navigator {
+         connection?: {
+           effectiveType: string;
+           downlink: number;
+         };
+      }
+   
+
+      const connection = (navigator as CustomNavigator).connection;
+
+
+      // 2. Usamos la nueva interfaz en lugar de 'any'
+      const hasGoodConnection = !connection ||
+        connection.effectiveType === '4g' ||
+        connection.downlink > 1.5;    
       
+      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
       setShouldShowVideo(isDesktop && hasGoodConnection && !prefersReducedMotion);
     };
 
