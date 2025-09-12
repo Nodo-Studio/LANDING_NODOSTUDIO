@@ -8,8 +8,6 @@
     "build": "tsc -b && vite build",
     "build:sass": "sass src/styles/main.scss dist/styles/main.css --no-source-map",
     "lint": "eslint .",
-    "test": "vitest",
-    "preview": "vite preview"
     "lint:scss": "stylelint '**/*.scss'",
     "lint:scss:fix": "stylelint '**/*.scss' --fix",
     "preview": "vite preview",
