@@ -1,18 +1,29 @@
 name: CI/CD NODOSTUDIO
 
+# Triggers múltiples para cubrir todos los escenarios
 on: 
+  # Mantener el comportamiento original: CI en push a feature branches
   push:
     branches:
       - 'feature/**'
+  
+  # Nuevo comportamiento: CI en Pull Requests
+  pull_request:
+    branches:
+      - develop
+      - main
 
 jobs:
+  # Job para push a feature branches (comportamiento original mejorado)
   test-feature:
-    name: Test on Feature Branch 
+    name: Test Feature Branch
     runs-on: ubuntu-latest
-
+    # Solo ejecutar este job en push events, no en pull_request events
+    if: github.event_name == 'push'
+    
     steps:
       - name: Checkout code
-        uses:  actions/checkout@v4
+        uses: actions/checkout@v4
 
       - name: Setup Node.js 
         uses: actions/setup-node@v4
@@ -21,10 +32,59 @@ jobs:
           cache: 'npm'
       
       - name: Install dependencies
-        run: npm install 
+        run: npm install
+
+      - name: Run linters for code quality
+        run: |
+          npm run lint
+          npm run lint:scss
 
       - name: Run unit tests
-        run: npm run test 
+        run: npm run test
 
+      - name: Verify project can be built
+        run: npm run build
 
+  # Job para Pull Requests (nuevo comportamiento)
+  validate-pr:
+    name: Validate Pull Request
+    runs-on: ubuntu-latest
+    # Solo ejecutar este job en pull_request events, no en push events
+    if: github.event_name == 'pull_request'
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
 
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+      
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run linters for code quality
+        run: |
+          npm run lint
+          npm run lint:scss
+
+      - name: Run unit tests
+        run: npm run test
+
+      - name: Verify project can be built
+        run: npm run build
+
+      - name: Comment PR with build status
+        uses: actions/github-script@v7
+        if: always()
+        with:
+          script: |
+            const status = '${{ job.status }}' === 'success' ? '✅ All checks passed!' : '❌ Some checks failed!';
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: `🚀 **CI/CD Status**: ${status}\n\n- Linting: ${{ steps.lint ? '✅' : '❌' }}\n- Tests: ${{ steps.test ? '✅' : '❌' }}\n- Build: ${{ steps.build ? '✅' : '❌' }}`
+            });
