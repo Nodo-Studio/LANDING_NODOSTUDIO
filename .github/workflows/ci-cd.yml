@@ -18,7 +18,6 @@ jobs:
   test-feature:
     name: Test Feature Branch
     runs-on: ubuntu-latest
-    # Solo ejecutar este job en push events, no en pull_request events
     if: github.event_name == 'push'
     
     steps:
@@ -35,21 +34,23 @@ jobs:
         run: npm install
 
       - name: Run linters for code quality
+        id: lint
         run: |
           npm run lint
           npm run lint:scss
 
       - name: Run unit tests
+        id: test
         run: npm run test
 
       - name: Verify project can be built
+        id: build
         run: npm run build
 
   # Job para Pull Requests (nuevo comportamiento)
   validate-pr:
     name: Validate Pull Request
     runs-on: ubuntu-latest
-    # Solo ejecutar este job en pull_request events, no en push events
     if: github.event_name == 'pull_request'
     
     steps:
@@ -66,14 +67,17 @@ jobs:
         run: npm install
 
       - name: Run linters for code quality
+        id: lint
         run: |
           npm run lint
           npm run lint:scss
 
       - name: Run unit tests
+        id: test
         run: npm run test
 
       - name: Verify project can be built
+        id: build
         run: npm run build
 
       - name: Comment PR with build status
@@ -81,10 +85,18 @@ jobs:
         if: always()
         with:
           script: |
-            const status = '${{ job.status }}' === 'success' ? 'OK All checks passed!' : 'FAIL Some checks failed!';
-            github.rest.issues.createComment({
+            const lint = '${{ steps.lint.outcome }}' === 'success' ? '✅ PASS' : '❌ ERROR';
+            const test = '${{ steps.test.outcome }}' === 'success' ? '✅ PASS' : '❌ ERROR';
+            const build = '${{ steps.build.outcome }}' === 'success' ? '✅ PASS' : '❌ ERROR';
+
+            const status = '${{ job.status }}' === 'success'
+              ? '✅ OK All checks passed!'
+              : '❌ FAIL Some checks failed!';
+
+            await github.rest.issues.createComment({
               issue_number: context.issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
-              body: `**CI/CD Status**: ${status}\n\n- Linting: ${{ steps.lint ? 'PASS' : 'ERROR' }}\n- Tests: ${{ steps.test ? 'PASS' : 'ERROR' }}\n- Build: ${{ steps.build ? 'PASS' : 'ERROR' }}`
+              body: `**CI/CD Status**: ${status}\n\n- Linting: ${lint}\n- Tests: ${test}\n- Build: ${build}`
             });
+
