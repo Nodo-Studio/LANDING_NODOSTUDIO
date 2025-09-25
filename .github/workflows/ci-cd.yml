@@ -81,10 +81,10 @@ jobs:
         if: always()
         with:
           script: |
-            const status = '${{ job.status }}' === 'success' ? '✅ All checks passed!' : '❌ Some checks failed!';
+            const status = '${{ job.status }}' === 'success' ? 'OK All checks passed!' : 'FAIL Some checks failed!';
             github.rest.issues.createComment({
               issue_number: context.issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
-              body: `🚀 **CI/CD Status**: ${status}\n\n- Linting: ${{ steps.lint ? '✅' : '❌' }}\n- Tests: ${{ steps.test ? '✅' : '❌' }}\n- Build: ${{ steps.build ? '✅' : '❌' }}`
+              body: `**CI/CD Status**: ${status}\n\n- Linting: ${{ steps.lint ? 'PASS' : 'ERROR' }}\n- Tests: ${{ steps.test ? 'PASS' : 'ERROR' }}\n- Build: ${{ steps.build ? 'PASS' : 'ERROR' }}`
             });
