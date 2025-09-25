@@ -67,6 +67,7 @@
     align-items: center;
     justify-content: space-between;
     background: var(--color-bg-primary);
+
     @include glassBlur;
 
     // RESPONSIVE: Altura del contenido
@@ -342,7 +343,7 @@
 // ===== MEDIA QUERIES ESPECIALES =====
 
 // Móviles en landscape - reducir altura del contenido
-@media (max-height: 500px) and (orientation: landscape) {
+@media (height <= 500px) and (orientation: landscape) {
   .container-hero {
     &-content {
       height: 80% !important;
@@ -388,7 +389,7 @@
 }
 
 // Pantallas muy pequeñas (iPhone SE, etc.)
-@media (max-width: 360px) {
+@media (width <= 360px) {
   .container-hero {
     &-content {
       &-info {
