@@ -81,14 +81,10 @@ jobs:
         if: always()
         with:
           script: |
-            const jobStatus = '${{ job.status }}';
-            const statusMessage = jobStatus === 'success' 
-              ? 'All checks passed successfully!' 
-              : 'Some checks failed. Please review the logs.';
-            
+            const status = '${{ job.status }}' === 'success' ? 'OK All checks passed!' : 'FAIL Some checks failed!';
             github.rest.issues.createComment({
               issue_number: context.issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
-              body: `## CI/CD Pipeline Status\n\n**Result:** ${statusMessage}\n\n**Job Status:** ${jobStatus}\n\nPlease check the Actions tab for detailed logs.`
+              body: `**CI/CD Status**: ${status}\n\n- Linting: ${{ steps.lint ? 'PASS' : 'ERROR' }}\n- Tests: ${{ steps.test ? 'PASS' : 'ERROR' }}\n- Build: ${{ steps.build ? '✅' : '❌' }}`
             });
