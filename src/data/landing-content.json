@@ -28,15 +28,15 @@
   "content_blocks": {
     "inicio": {
       "title": "HOME",
-      "banner_image": "/images/hero/hero-fallback.jpg"
+      "banner_image": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1920&q=80"
     },
     "diseno-de-software": {
       "type": "Diseño de Software",
       "title": "Diseño Centrado en el Usuario que Convierte Visitantes en Clientes",
       "description": "Creamos experiencias digitales que no solo se ven bien, sino que resuelven problemas reales. Cada interfaz se diseña pensando en la usabilidad, accesibilidad y conversión, garantizando que tus usuarios encuentren exactamente lo que buscan.",
       "images": [
-        "/images/placeholder-design-1.jpg",
-        "/images/placeholder-design-2.jpg"
+        "https://images.unsplash.com/photo-1607083204494-76d8de0b5c3c?auto=format&fit=crop&w=1200&q=80",
+        "https://images.unsplash.com/photo-1616627987934-74b74b6b90c3?auto=format&fit=crop&w=1200&q=80"
       ]
     },
     "desarrollo-de-software": {
@@ -44,21 +44,25 @@
       "title": "Desarrollo Robusto y Escalable para un Futuro sin Límites",
       "description": "Construimos la arquitectura de tu aplicación con visión de futuro. Utilizamos las mejores prácticas y tecnologías probadas para garantizar un software rápido, mantenible y preparado para crecer junto a tu negocio.",
       "images": [
-        "/images/placeholder-dev-1.jpg",
-        "/images/placeholder-dev-2.jpg"
+        "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1200&q=80",
+        "https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?auto=format&fit=crop&w=1200&q=80"
       ]
     },
     "proyecto-alpha": {
       "type": "Caso de Estudio",
       "title": "Análisis y Desarrollo para Alpha Inc.",
       "description": "Descripción detallada del trabajo realizado para el Proyecto Alpha.",
-      "images": []
+      "images": [
+        "https://images.unsplash.com/photo-1581091870627-3d4a5b3b6b7c?auto=format&fit=crop&w=1200&q=80"
+      ]
     },
     "proyecto-beta": {
       "type": "E-commerce",
       "title": "Plataforma de Ventas para Proyecto Beta",
       "description": "Descripción detallada del trabajo realizado para el Proyecto Beta.",
-      "images": []
+      "images": [
+        "https://images.unsplash.com/photo-1556742031-c6961e8560b0?auto=format&fit=crop&w=1200&q=80"
+      ]
     },
     "contacto": {
       "title": "CONTACTO",

@@ -46,3 +46,31 @@
     }
   }
 }
+
+// Estilos para la sub-lista que se despliega
+.sub-nav {
+  list-style: none;
+  padding-left: 1.5rem; // Indentación para anidar
+  margin-top: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+
+  a {
+   font-size: 0.9rem; // Un poco más pequeño que los enlaces principales
+   font-weight: 400;
+
+   // Estilo para el sub-item activo
+   &.active {
+     color: var(--color-tertiary); // Usa un color de acento diferente
+     background-color: transparent; // Sin fondo
+     font-weight: 600;
+   }
+ }
+}
+
+// Estilo para el enlace padre cuando está activo
+a.parent {
+  color: var(--color-primary);
+  font-weight: 700;
+}

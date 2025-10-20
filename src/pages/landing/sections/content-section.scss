@@ -1,0 +1,64 @@
+@use '../../../styles/abstracts/index.scss' as *;
+
+.content-section {
+  // Propiedades clave para que el scroll-snap y el observer sigan funcionando
+  height: 100vh;
+  scroll-snap-align: start;
+  position: relative;
+  overflow: hidden;
+
+  padding: 2rem;
+  display: flex;
+  justify-content: start;
+  align-items: start; // Alinea el contenido a la izquierda
+  background-color: var(--color-bg-primary);
+}
+
+.content-banner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 40vh;
+  background-size: cover;
+  background-position: center;
+  z-index: 1;
+
+  // Un overlay oscuro para que el texto sea más legible
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+}
+
+.content-wrapper {
+  position: relative;
+  z-index: 2; // Por encima del banner
+  max-width: 90%; // Limita el ancho del texto
+  color: var(--color-secondary);
+  border:1px solid red;
+}
+
+.content-type {
+  display: block;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-weight: 600;
+  color: var(--color-tertiary);
+}
+
+.content-title {
+  font-size: 3.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.content-description {
+   font-size: 1.1rem;
+  line-height: 1.7;
+}
