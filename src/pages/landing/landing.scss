@@ -1,0 +1,13 @@
+@use '../../styles/abstracts/index.scss' as *;
+
+.landing-container{
+  position: relative;
+  height: 100vh;  
+  &-main {
+    height: 100vh;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+    margin-left: $sidebar-width; 
+    padding-top: 70px;
+  }
+}

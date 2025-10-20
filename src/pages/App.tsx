@@ -1,7 +1,7 @@
 import React from 'react'
 import { useDocumentHead } from '../hooks/useDocumentHead'
-import Construccion from './construccion/Construction'
 import Header from '../components/header/Header'
+import Landing from '../pages/landing/Landing.tsx'
 
 import './app.scss'
 
@@ -21,8 +21,7 @@ const App: React.FC = () => {
   return (
     <>
       <div className='container-app'>
-        <Header />
-        <Construccion />
+        <Landing />
       </div>
     </>
   )

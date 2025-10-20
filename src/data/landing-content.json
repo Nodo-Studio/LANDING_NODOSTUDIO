@@ -1,0 +1,68 @@
+{
+  "sections": [
+    {
+      "id": "inicio",
+      "title": "Inicio"
+    },
+    {
+      "id": "servicios",
+      "title": "Servicios",
+      "subItems": [
+        { "id": "diseno-de-software", "title": "Diseño de Software" },
+        { "id": "desarrollo-de-software", "title": "Desarrollo de Software" }
+      ]
+    },
+    {
+      "id": "trabajos",
+      "title": "Trabajos",
+      "subItems": [
+        { "id": "proyecto-alpha", "title": "Proyecto Alpha" },
+        { "id": "proyecto-beta", "title": "Proyecto Beta" }
+      ]
+    },
+    {
+      "id": "contacto",
+      "title": "Contacto"
+    }
+  ],
+  "content_blocks": {
+    "inicio": {
+      "title": "HOME",
+      "banner_image": "/images/hero/hero-fallback.jpg"
+    },
+    "diseno-de-software": {
+      "type": "Diseño de Software",
+      "title": "Diseño Centrado en el Usuario que Convierte Visitantes en Clientes",
+      "description": "Creamos experiencias digitales que no solo se ven bien, sino que resuelven problemas reales. Cada interfaz se diseña pensando en la usabilidad, accesibilidad y conversión, garantizando que tus usuarios encuentren exactamente lo que buscan.",
+      "images": [
+        "/images/placeholder-design-1.jpg",
+        "/images/placeholder-design-2.jpg"
+      ]
+    },
+    "desarrollo-de-software": {
+      "type": "Desarrollo de Software",
+      "title": "Desarrollo Robusto y Escalable para un Futuro sin Límites",
+      "description": "Construimos la arquitectura de tu aplicación con visión de futuro. Utilizamos las mejores prácticas y tecnologías probadas para garantizar un software rápido, mantenible y preparado para crecer junto a tu negocio.",
+      "images": [
+        "/images/placeholder-dev-1.jpg",
+        "/images/placeholder-dev-2.jpg"
+      ]
+    },
+    "proyecto-alpha": {
+      "type": "Caso de Estudio",
+      "title": "Análisis y Desarrollo para Alpha Inc.",
+      "description": "Descripción detallada del trabajo realizado para el Proyecto Alpha.",
+      "images": []
+    },
+    "proyecto-beta": {
+      "type": "E-commerce",
+      "title": "Plataforma de Ventas para Proyecto Beta",
+      "description": "Descripción detallada del trabajo realizado para el Proyecto Beta.",
+      "images": []
+    },
+    "contacto": {
+      "title": "CONTACTO",
+      "description": "Contenido de la sección de contacto."
+    }
+  }
+}
