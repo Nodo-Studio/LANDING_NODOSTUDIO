@@ -1,13 +1,13 @@
 @use '../../styles/abstracts/index.scss' as *;
 
-.landing-container{
+.landing-container {
   position: relative;
-  height: 100vh;  
-  &-main {
+  display: flex; // Usamos flexbox para el layout principal
+
+  .landing-main {
+    flex-grow: 1; // El contenido principal crece para ocupar el espacio restante
     height: 100vh;
     overflow-y: scroll;
     scroll-snap-type: y mandatory;
-    margin-left: $sidebar-width; 
-    padding-top: 70px;
   }
 }

@@ -2,12 +2,12 @@ import './header.scss';
 
 const Header = () => {
   return (
-    <> 
-      <header className='container-header'>
-        <div className='container-header-logo' >
+    <>
+      <header className="container-header">
+        <div className="container-header-logo">
           <h4>NODOSTUDIO</h4>
         </div>
-        <div className='container-header-nav' >
+        <div className="container-header-nav">
           <ul>
             <li>Whatsaap</li>
             <li>Facebook</li>
@@ -17,7 +17,7 @@ const Header = () => {
         </div>
       </header>
     </>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;

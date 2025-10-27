@@ -1,25 +1,23 @@
-import { useCountdown } from "../hooks/useCountdown"
-import type { CountdownProps } from "../types/reloj.types";
+import { useCountdown } from '../hooks/useCountdown';
+import type { CountdownProps } from '../types/reloj.types';
 
 import './reloj.scss';
 
-
-const Reloj = ({targetDate} : CountdownProps) => {
-  
+const Reloj = ({ targetDate }: CountdownProps) => {
   const { dias, horas, minutos, segundos } = useCountdown(targetDate);
 
-  //Formateando las horas minutos y segundos : 
+  //Formateando las horas minutos y segundos :
   const horasFormat = horas.toString().padStart(2, '0');
   const minutosFormat = minutos.toString().padStart(2, '0');
   const segundosFormat = segundos.toString().padStart(2, '0');
 
   return (
-    <> 
+    <>
       <section className="container-reloj">
         <div>
           <p>Dias</p>
           <span>{dias}</span>
-        </div>  
+        </div>
         <p>:</p>
         <div>
           <p>Horas</p>
@@ -37,8 +35,7 @@ const Reloj = ({targetDate} : CountdownProps) => {
         </div>
       </section>
     </>
-  )
-}
+  );
+};
 
-export default Reloj
-
+export default Reloj;

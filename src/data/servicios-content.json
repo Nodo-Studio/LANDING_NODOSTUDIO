@@ -1,0 +1,22 @@
+{
+  "servicios": {
+    "diseno-de-software": {
+      "type": "Diseño de Software",
+      "title": "Diseño Centrado en el Usuario que Convierte Visitantes en Clientes",
+      "description": "Creamos experiencias digitales que no solo se ven bien, sino que resuelven problemas reales. Cada interfaz se diseña pensando en la usabilidad, accesibilidad y conversión, garantizando que tus usuarios encuentren exactamente lo que buscan.",
+      "images": [
+        "https://images.unsplash.com/photo-1607083204494-76d8de0b5c3c?auto=format&fit=crop&w=1200&q=80",
+        "https://images.unsplash.com/photo-1616627987934-74b74b6b90c3?auto=format&fit=crop&w=1200&q=80"
+      ]
+    },
+    "desarrollo-de-software": {
+      "type": "Desarrollo de Software",
+      "title": "Desarrollo Robusto y Escalable para un Futuro sin Límites",
+      "description": "Construimos la arquitectura de tu aplicación con visión de futuro. Utilizamos las mejores prácticas y tecnologías probadas para garantizar un software rápido, mantenible y preparado para crecer junto a tu negocio.",
+      "images": [
+        "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1200&q=80",
+        "https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?auto=format&fit=crop&w=1200&q=80"
+      ]
+    }
+  }
+}

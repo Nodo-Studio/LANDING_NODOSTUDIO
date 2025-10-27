@@ -10,7 +10,6 @@
   background-position: center;
 }
 
-
 //
 @mixin glassBlur($color: var(--color-bg-primary), $opacity: 0.09, $blur: 20px) {
   background: ($color, $opacity);

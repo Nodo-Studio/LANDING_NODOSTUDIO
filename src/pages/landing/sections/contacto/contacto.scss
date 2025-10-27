@@ -1,0 +1,22 @@
+.contacto-section {
+  min-height: 100vh;
+  padding: 6rem 2rem;
+  background-color: #f0fff0; // Honeydew
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  .section-title {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #333;
+  }
+
+  .contacto-description {
+    font-size: 1.2rem;
+    color: #555;
+    max-width: 600px;
+  }
+}

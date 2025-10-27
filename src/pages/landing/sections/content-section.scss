@@ -1,17 +1,53 @@
 @use '../../../styles/abstracts/index.scss' as *;
 
 .content-section {
-  // Propiedades clave para que el scroll-snap y el observer sigan funcionando
-  height: 100vh;
-  scroll-snap-align: start;
-  position: relative;
-  overflow: hidden;
-
-  padding: 2rem;
+  min-height: 100vh; // Cada sección ocupa al menos el alto de la pantalla
   display: flex;
-  justify-content: start;
-  align-items: start; // Alinea el contenido a la izquierda
-  background-color: var(--color-bg-primary);
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 4rem 2rem;
+  text-align: center;
+  transition: background-color 0.5s ease;
+
+  // Alternar colores de fondo para las secciones
+  &:nth-of-type(odd) {
+    background-color: #f8f9fa; // Un gris muy claro
+  }
+
+  &:nth-of-type(even) {
+    background-color: #eff1f3; // Un gris azulado muy claro
+  }
+
+  .content-wrapper {
+    max-width: 800px;
+  }
+
+  .content-type {
+    display: block;
+    font-size: 1rem;
+    color: #6c757d; // Color de texto secundario
+    margin-bottom: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .content-title {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: #212529; // Color de texto principal
+  }
+
+  .content-description {
+    font-size: 1.15rem;
+    line-height: 1.6;
+    color: #495057; // Color de texto del cuerpo
+  }
+
+  // Se elimina el banner de aquí para que no interfiera con el diseño de página completa
+  .content-banner {
+    display: none;
+  }
 }
 
 .content-banner {
@@ -41,7 +77,7 @@
   z-index: 2; // Por encima del banner
   max-width: 90%; // Limita el ancho del texto
   color: var(--color-secondary);
-  border:1px solid red;
+  border: 1px solid red;
 }
 
 .content-type {
@@ -59,6 +95,6 @@
 }
 
 .content-description {
-   font-size: 1.1rem;
+  font-size: 1.1rem;
   line-height: 1.7;
 }

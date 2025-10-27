@@ -8,7 +8,7 @@ body {
   height: 100%;
   width: 100%;
   font-family: $font-family;
-  background-color: var(--color-bg-primary); 
+  background-color: var(--color-bg-primary);
   color: var(--color-secondary);
   transition:
     background-color 0.3s,
@@ -31,7 +31,6 @@ body.light {
 
 body.dark {
   @extend %theme-dark;
-
 }
 
 /* Estilos para navegadores WebKit (Chrome, Safari) */
@@ -64,5 +63,3 @@ html {
   scrollbar-width: thin;
   scrollbar-color: var(--color-primary) var(--color-bg-primary);
 }
-
-
