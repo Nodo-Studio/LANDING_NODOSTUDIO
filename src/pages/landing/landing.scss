@@ -2,12 +2,9 @@
 
 .landing-container {
   position: relative;
-  display: flex; // Usamos flexbox para el layout principal
+  display: flex;
 
   .landing-main {
-    flex-grow: 1; // El contenido principal crece para ocupar el espacio restante
-    height: 100vh;
-    overflow-y: scroll;
-    scroll-snap-type: y mandatory;
+    flex-grow: 1;
   }
 }

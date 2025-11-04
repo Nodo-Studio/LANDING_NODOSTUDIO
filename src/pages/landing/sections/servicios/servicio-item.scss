@@ -1,0 +1,32 @@
+.servicio-item {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 4rem 2rem;
+  text-align: center;
+  background-color: #F3F8FF;
+
+  .content-wrapper {
+    max-width: 800px;
+  }
+
+  .content-type {
+    display: block;
+    font-size: 1rem;
+    color: #6c757d;
+    margin-bottom: 0.75rem;
+    text-transform: uppercase;
+  }
+
+  .content-title {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .content-description {
+    font-size: 1.15rem;
+    line-height: 1.6;
+  }
+}

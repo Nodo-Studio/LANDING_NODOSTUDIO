@@ -1,34 +1,40 @@
 @use '../../styles/abstracts/index.scss' as *;
 
 .sidebar-container {
-  flex: 0 0 $sidebar-width; // No crece, no se encoge, base de $sidebar-width
-  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
   z-index: 50;
+
+  width: $sidebar-width;
+  height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
-  padding: 2rem 1.5rem;
-  border-right: 1px solid var(--color-line); // Borde a la derecha en lugar de en todos lados
-  overflow-y: auto; // Añade scroll si el menú es más alto que la pantalla
+  border-right: 1px solid var(--color-line);
 
-  .sidebar-nav {
+  .sidebar-container-nav {
     pointer-events: auto;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
     ul {
       list-style: none;
-      padding: 0;
-      margin: 0;
-      display: flex;
+      display: contents;
       flex-direction: column;
       gap: 1rem;
     }
+
     a {
       display: block;
-      padding: 0.5rem 1rem;
-      border-radius: $radius-container;
+      padding: 1rem 1.5rem;
       text-decoration: none;
       color: var(--color-font-secondary);
       font-weight: 500;
-      transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+      transition:
+        color 0.2s ease-in-out,
+        background-color 0.2s ease-in-out;
 
       &:hover {
         color: var(--color-primary);
@@ -36,8 +42,7 @@
       }
 
       &.active {
-        color: var(--color-primary);
-        background-color: var(--color-hover--secondary);
+        color: var(--color-secondary-logo);
         font-weight: 700;
       }
     }
@@ -47,23 +52,24 @@
 // Estilos para la sub-lista que se despliega
 .sub-nav {
   list-style: none;
-  padding-left: 1.5rem; // Indentación para anidar
+  padding-left: 2rem;
   margin-top: 0.75rem;
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 1rem;
 
   a {
-   font-size: 0.9rem; // Un poco más pequeño que los enlaces principales
-   font-weight: 400;
+    font-size: 0.9rem; // Un poco más pequeño que los enlaces principales
+    font-weight: 400;
 
-   // Estilo para el sub-item activo
-   &.active {
-     color: var(--color-tertiary); // Usa un color de acento diferente
-     background-color: transparent; // Sin fondo
-     font-weight: 600;
-   }
- }
+    // Estilo para el sub-item activo
+    &.active {
+      border-right: 5px solid red;
+      color: var(--color-red-alert-opacity);
+      font-weight: 600;
+      background-color: var(--color-secondary-logo-light);
+    }
+  }
 }
 
 // Estilo para el enlace padre cuando está activo

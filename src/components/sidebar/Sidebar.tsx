@@ -18,42 +18,47 @@ const Sidebar: React.FC<SidebarProps> = ({ sections, activeSection }) => {
   // (ya sea ella misma o uno de sus hijos)
   const isParentActive = (section: Section): boolean => {
     if (activeSection === section.id) return true;
-    return section.subItems?.some(sub => activeSection === sub.id) || false;
+    return section.subItems?.some((sub) => activeSection === sub.id) || false;
   };
 
   return (
     <aside className="sidebar-container">
       <nav className="sidebar-container-nav">
-       <ul>
-          {/* Mapea la estructura de navegación desde el JSON */}
-          {sections.map((section) => (
-           <li key={section.id}>
-             <a
-                href={`#${section.id}`}
-               className={isParentActive(section) ? 'active parent' : ''}
-              >
-               {section.title}
-              </a>
+        <div>
+          <ul>
+            {/* Mapea la estructura de navegación desde el JSON */}
+            {sections.map((section) => (
+              <li key={section.id}>
+                <a
+                  href={`#${section.id}`}
+                  className={isParentActive(section) ? 'active parent' : ''}
+                >
+                  {section.title}
+                </a>
 
-              {/* Si la sección tiene sub-items Y está activa, muestra la sub-lista */}
-              {isParentActive(section) && section.subItems && (
-                <ul className="sub-nav">
-                  {section.subItems.map((subItem) => (
-                    <li key={subItem.id}>
-                     <a
-                       href={`#${subItem.id}`}
-                        className={activeSection === subItem.id ? 'active' : ''}
-                      >
-                        {subItem.title}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-             )}
-           </li>
-         ))}
-        </ul>
-     </nav>
+                {/* Si la sección tiene sub-items Y está activa, muestra la sub-lista */}
+                {isParentActive(section) && section.subItems && (
+                  <ul className="sub-nav">
+                    {section.subItems.map((subItem) => (
+                      <li key={subItem.id}>
+                        <a
+                          href={`#${subItem.id}`}
+                          className={activeSection === subItem.id ? 'active' : ''}
+                        >
+                          {subItem.title}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div className="button-contact">
+          <button>CONTACTO</button>
+        </div>
+      </nav>
     </aside>
   );
 };

@@ -1,15 +1,18 @@
 .hero-section {
-  min-height: 100vh;
+  height: 60vh;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: lightcyan; // AliceBlue
-  position: relative; // Necesario para el banner
-  overflow: hidden; // Oculta partes del banner que se salgan
+  flex-direction: column;
+  background-color: #ecf0f1;
+  position: relative;
+  overflow: hidden;
 
   .hero-wrapper {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-align: center;
-    z-index: 1; // Asegura que el título esté sobre el banner
+    z-index: 1;
   }
 
   .hero-title {
@@ -25,7 +28,7 @@
     height: 100%;
     background-size: cover;
     background-position: center;
-    z-index: 0; // Detrás del contenido
-    opacity: 0.3; // Más sutil
+    z-index: 0;
+    opacity: 0.1; // Reducido para no interferir visualmente
   }
 }
