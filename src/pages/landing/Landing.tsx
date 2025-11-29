@@ -21,27 +21,32 @@ const Landing: React.FC = () => {
     <>
       <Header />
       <SliderHero />
-      <div className="landing-container">
+      <main className="landing-main">
         <Sidebar sections={sections} activeSection={activeSection} />
-        <main className="landing-main">
-          <HeroSection />
-          {/* Mapea y renderiza un componente por cada SERVICIO */}
-          {sections
-            .find((sec) => sec.id === 'servicios')
-            ?.subItems?.map((subItem) => (
-              <ServicioItem key={subItem.id} id={subItem.id} />
-            ))}
+        <div className="section-wrapper">
+          <section id="inicio" className="section">
+            <HeroSection />
+          </section>
 
-          {/* Mapea y renderiza un componente por cada TRABAJO */}
-          {sections
-            .find((sec) => sec.id === 'trabajos')
-            ?.subItems?.map((subItem) => (
-              <TrabajoItem key={subItem.id} id={subItem.id} />
-            ))}
-
+          <section id="servicios" className="section">
+            {/* Mapea y renderiza un componente por cada SERVICIO */}
+            {sections
+              .find((sec) => sec.id === 'servicios')
+              ?.subItems?.map((subItem) => (
+                <ServicioItem key={subItem.id} id={subItem.id} />
+              ))}
+          </section>
+          <section id="trabajos" className="section">
+            {/* Mapea y renderiza un componente por cada TRABAJO */}
+            {sections
+              .find((sec) => sec.id === 'trabajos')
+              ?.subItems?.map((subItem) => (
+                <TrabajoItem key={subItem.id} id={subItem.id} />
+              ))}
+          </section>
           <ContactoSection />
-        </main>
-      </div>
+        </div>
+      </main>
     </>
   );
 };

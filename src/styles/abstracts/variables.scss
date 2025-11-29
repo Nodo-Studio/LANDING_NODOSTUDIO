@@ -3,70 +3,75 @@
 // ===============================================
 // Font Family
 $font-family: 'Manrope', sans-serif;
+
 // Color constants
 $color-font-alert: #f3f9ff;
+
 // Spacing
 $padding-input: 1rem;
+
 // Border Radius
 $radius-input: 6px;
 $radius-container: 12px;
+
 //Side-Bar
 $sidebar-width: 280px;
 
 // ===============================================
-// CSS CUSTOM PROPERTIES
+// CSS CUSTOM PROPERTIES - Paleta Corporativa
 // ===============================================
 :root {
-  // PRIMARY COLORS - Corporate Trust Blue
-  --color-primary: hsl(199deg 85% 35%); // #013D5A - Azul corporativo principal
-  --color-secondary: hsl(207deg 88% 12%); // #051B2C - Azul profundo secundario
+  // PRIMARY COLORS - Paleta corporativa
+  --color-primary: #013d5a; // Azul corporativo principal (círculo 1)
+  --color-secondary: #051b2c; // Azul profundo oscuro (círculo 2)
 
   // BACKGROUND COLORS - Light theme
-  --color-bg-primary: hsl(210deg 25% 98%); // #F8F9FA - Fondo principal claro
-  --color-bg-secondary: hsl(210deg 17% 94%); // #E2E8F0 - Fondo secundario
+  --color-bg-primary: #eaf1f6; // Fondo principal claro (círculo 5)
+  --color-bg-secondary: #f5f8fa; // Fondo secundario más claro
 
-  // ACCENT COLORS - Corporate Trust
-  --color-secondary-logo: hsl(6deg 100% 70%); // #FF6B6B - Rojo coral de acción
-  --color-secondary-logo-light: hsla(6, 100%, 70%, 0.1); // ✅ Rojo coral 10%
-  --color-tertiary: hsl(174deg 72% 56%); // #4ECDC4 - Turquesa de confianza
+  // ACCENT COLORS - De la paleta
+  --color-secondary-logo: #ff6b6b; // Rojo coral (círculo 3)
+  --color-secondary-logo-light: rgba(255, 107, 107, 0.1); // Rojo coral 10%
+  --color-tertiary: #4ecdc4; // Turquesa (círculo 4)
+  --color-accent-light: #ffffff; // Blanco puro
 
   // FONT COLORS
-  --color-font: hsl(210deg 24% 16%); // #334155 - Texto principal
-  --color-font-secondary: hsl(215deg 16% 47%); // #64748B - Texto secundario
-  --color-font-muted: hsl(215deg 20% 65%); // #94A3B8 - Texto deshabilitado
+  --color-font: #051b2c; // Texto principal (azul profundo)
+  --color-font-secondary: #013d5a; // Texto secundario (azul corporativo)
+  --color-font-muted: #6b8a9b; // Texto deshabilitado
 
   // INTERACTIVE STATES
-  --color-line: hsla(215, 25%, 16%, 0.35); // ✅ Líneas y bordes
-  --color-bg-transparent: hsla(199, 85%, 35%, 0.05); // ✅ Fondos transparentes
-  --color-hover: hsla(174, 72%, 56%, 0.1); // ✅ Estados hover
-  --color-focus: hsla(6, 100%, 70%, 0.2); // ✅ Estados focus
+  --color-line: rgba(5, 27, 44, 0.15); // Líneas y bordes
+  --color-bg-transparent: rgba(1, 61, 90, 0.05); // Fondos transparentes azul
+  --color-hover: rgba(78, 205, 196, 0.1); // Estados hover turquesa
+  --color-focus: rgba(255, 107, 107, 0.2); // Estados focus rojo coral
 
   // NEUTRAL SCALE
-  --color-text: hsl(199deg 85% 35%); // Texto principal (azul corporativo)
-  --color-third: hsl(210deg 20% 96%); // #F1F5F9 - Fondo terciario
-  --color-fourth: hsl(210deg 25% 98%); // #F8FAFC - Fondo cuaternario
-  --color-fifth: hsl(220deg 14% 96%); // #F1F5F9 - Fondo quinario
+  --color-text: #051b2c; // Texto principal
+  --color-third: #d9e5ed; // Fondo terciario
+  --color-fourth: #f0f5f8; // Fondo cuaternario
+  --color-fifth: #fafcfd; // Fondo quinario
 
   // INTERACTION STATES
-  --color-bg-transparent-light: hsla(174, 72%, 56%, 0.08); // ✅ Turquesa 8%
-  --color-hover-secondary: hsla(199, 85%, 35%, 0.08); // ✅ Azul corporativo 8%
-  --color-active: hsla(6, 100%, 70%, 0.15); // ✅ Rojo coral 15%
+  --color-bg-transparent-light: rgba(78, 205, 196, 0.08); // Turquesa 8%
+  --color-hover-secondary: rgba(1, 61, 90, 0.08); // Azul corporativo 8%
+  --color-active: rgba(255, 107, 107, 0.15); // Rojo coral 15%
 
-  // ALERTS - Corporate Trust adapted
-  --color-alert-red: hsl(0deg 84% 60%); // #E55555 - Error suavizado
-  --color-alert-red-bg: hsla(0, 84%, 60%, 0.1); // ✅ Fondo de error
-  --color-alert-yellow: hsl(38deg 92% 50%); // #F39C12 - Warning dorado
-  --color-alert-yellow-bg: hsla(38, 92%, 50%, 0.1); // ✅ Fondo warning
-  --color-alert-green: hsl(140deg 69% 58%); // #27AE60 - Success verde
-  --color-alert-green-bg: hsla(140, 69%, 58%, 0.1); // ✅ Fondo success
-  --color-alert-info: hsl(174deg 72% 56%); // #4ECDC4 - Info turquesa
-  --color-alert-info-bg: hsla(174, 72%, 56%, 0.1); // ✅ Fondo info
+  // ALERTS - Usando la paleta
+  --color-alert-red: #ff6b6b; // Error (rojo coral)
+  --color-alert-red-bg: rgba(255, 107, 107, 0.1); // Fondo de error
+  --color-alert-yellow: #ffb84d; // Warning amarillo
+  --color-alert-yellow-bg: rgba(255, 184, 77, 0.1); // Fondo warning
+  --color-alert-green: #4ecdc4; // Success (turquesa)
+  --color-alert-green-bg: rgba(78, 205, 196, 0.1); // Fondo success
+  --color-alert-info: #013d5a; // Info (azul principal)
+  --color-alert-info-bg: rgba(1, 61, 90, 0.1); // Fondo info
 
   // ALERT OPACITY VARIANTS
-  --color-green-alert-opacity: hsla(140, 69%, 58%, 0.166); // ✅ 16.6%
-  --color-red-alert-opacity: hsla(0, 84%, 60%, 0.166); // ✅ 16.6%
-  --color-yellow-alert-opacity: hsla(38, 92%, 50%, 0.166); // ✅ 16.6%
-  --color-blue-alert-opacity: hsla(174, 72%, 56%, 0.166); // ✅ 16.6%
+  --color-green-alert-opacity: rgba(78, 205, 196, 0.166); // 16.6%
+  --color-red-alert-opacity: rgba(255, 107, 107, 0.166); // 16.6%
+  --color-yellow-alert-opacity: rgba(255, 184, 77, 0.166); // 16.6%
+  --color-blue-alert-opacity: rgba(1, 61, 90, 0.166); // 16.6%
 }
 
 // ===============================================
@@ -74,53 +79,55 @@ $sidebar-width: 280px;
 // ===============================================
 [data-theme='dark'] {
   // PRIMARY COLORS - Inverted for dark mode
-  --color-primary: hsl(210deg 25% 98%); // Texto claro
-  --color-secondary: hsl(210deg 17% 94%); // Texto secundario claro
+  --color-primary: #4a9bc7; // Azul más claro para contraste
+  --color-secondary: #0a2e45; // Azul profundo ligeramente más claro
 
   // BACKGROUND COLORS - Dark theme
-  --color-bg-primary: hsl(220deg 39% 11%); // #0F172A - Fondo oscuro principal
-  --color-bg-secondary: hsl(215deg 28% 17%); // #1E293B - Fondo secundario oscuro
+  --color-bg-primary: #051b2c; // Fondo oscuro principal (círculo 2)
+  --color-bg-secondary: #0a2536; // Fondo secundario oscuro
+  --color-bg-tertiary: #0f3148; // Fondo terciario oscuro
 
   // ACCENT COLORS - Maintained for brand consistency
-  --color-secondary-logo: hsl(6deg 100% 70%); // #FF6B6B - Mantiene rojo coral
-  --color-secondary-logo-light: hsla(6, 100%, 70%, 0.15); // ✅ Más visible en dark
-  --color-tertiary: hsl(174deg 72% 56%); // #4ECDC4 - Mantiene turquesa
+  --color-secondary-logo: #ff8585; // Rojo coral más claro
+  --color-secondary-logo-light: rgba(255, 133, 133, 0.15); // Más visible en dark
+  --color-tertiary: #5ed9d1; // Turquesa más claro
+  --color-accent-light: #eaf1f6; // Casi blanco
 
   // FONT COLORS - Inverted
-  --color-font: hsl(210deg 25% 98%); // Texto claro principal
-  --color-font-secondary: hsl(215deg 20% 65%); // #94A3B8 - Texto secundario
-  --color-font-muted: hsl(215deg 16% 47%); // #64748B - Texto deshabilitado
+  --color-font: #eaf1f6; // Texto claro principal
+  --color-font-secondary: #b8cdd9; // Texto secundario
+  --color-font-muted: #6b8a9b; // Texto deshabilitado
 
   // INTERACTIVE STATES - Dark adapted
-  --color-line: hsla(215, 25%, 27%, 0.5); // ✅ Líneas más visibles en oscuro
-  --color-bg-transparent: hsla(174, 72%, 56%, 0.08); // ✅ Fondos transparentes
-  --color-hover: hsla(6, 100%, 70%, 0.15); // ✅ Estados hover más visibles
-  --color-focus: hsla(174, 72%, 56%, 0.25); // ✅ Estados focus
+  --color-line: rgba(234, 241, 246, 0.15); // Líneas más visibles en oscuro
+  --color-bg-transparent: rgba(78, 205, 196, 0.08); // Fondos transparentes
+  --color-hover: rgba(255, 133, 133, 0.15); // Estados hover más visibles
+  --color-focus: rgba(94, 217, 209, 0.25); // Estados focus
 
   // NEUTRAL SCALE - Dark adapted
-  --color-text: hsl(210deg 25% 98%); // Texto claro
-  --color-third: hsl(215deg 25% 22%); // #334155 - Fondo terciario oscuro
-  --color-fourth: hsl(215deg 28% 17%); // #1E293B - Fondo cuaternario
-  --color-fifth: hsl(220deg 39% 11%); // #0F172A - Fondo más oscuro
+  --color-text: #eaf1f6; // Texto claro
+  --color-third: #0f3148; // Fondo terciario oscuro
+  --color-fourth: #0a2536; // Fondo cuaternario
+  --color-fifth: #051b2c; // Fondo más oscuro
 
   // INTERACTION STATES - Enhanced for dark mode
-  --color-bg-transparent-light: hsla(174, 72%, 56%, 0.12); // ✅ Turquesa 12%
-  --color-hover-secondary: hsla(6, 100%, 70%, 0.12); // ✅ Rojo coral 12%
-  --color-active: hsla(174, 72%, 56%, 0.2); // ✅ Turquesa 20%
+  --color-bg-transparent-light: rgba(94, 217, 209, 0.12); // Turquesa 12%
+  --color-hover-secondary: rgba(255, 133, 133, 0.12); // Rojo coral 12%
+  --color-active: rgba(94, 217, 209, 0.2); // Turquesa 20%
 
   // ALERTS - Dark mode optimized
-  --color-alert-red: hsl(0deg 84% 65%); // Más claro para contraste
-  --color-alert-red-bg: hsla(0, 84%, 65%, 0.15); // ✅ Fondo error dark
-  --color-alert-yellow: hsl(38deg 92% 55%); // Más claro
-  --color-alert-yellow-bg: hsla(38, 92%, 55%, 0.15); // ✅ Fondo warning dark
-  --color-alert-green: hsl(140deg 69% 63%); // Más claro
-  --color-alert-green-bg: hsla(140, 69%, 63%, 0.15); // ✅ Fondo success dark
-  --color-alert-info: hsl(174deg 72% 61%); // Más claro
-  --color-alert-info-bg: hsla(174, 72%, 61%, 0.15); // ✅ Fondo info dark
+  --color-alert-red: #ff8585; // Más claro para contraste
+  --color-alert-red-bg: rgba(255, 133, 133, 0.15); // Fondo error dark
+  --color-alert-yellow: #ffc266; // Más claro
+  --color-alert-yellow-bg: rgba(255, 194, 102, 0.15); // Fondo warning dark
+  --color-alert-green: #5ed9d1; // Turquesa más claro
+  --color-alert-green-bg: rgba(94, 217, 209, 0.15); // Fondo success dark
+  --color-alert-info: #4a9bc7; // Azul más claro
+  --color-alert-info-bg: rgba(74, 155, 199, 0.15); // Fondo info dark
 
   // ALERT OPACITY VARIANTS - Dark adapted
-  --color-green-alert-opacity: hsla(140, 69%, 63%, 0.2); // ✅ 20%
-  --color-red-alert-opacity: hsla(0, 84%, 65%, 0.2); // ✅ 20%
-  --color-yellow-alert-opacity: hsla(38, 92%, 55%, 0.2); // ✅ 20%
-  --color-blue-alert-opacity: hsla(174, 72%, 61%, 0.2); // ✅ 20%
+  --color-green-alert-opacity: rgba(94, 217, 209, 0.2); // 20%
+  --color-red-alert-opacity: rgba(255, 133, 133, 0.2); // 20%
+  --color-yellow-alert-opacity: rgba(255, 194, 102, 0.2); // 20%
+  --color-blue-alert-opacity: rgba(74, 155, 199, 0.2); // 20%
 }

@@ -1,20 +1,22 @@
 @use '../../styles/abstracts/index.scss' as *;
 
 .sidebar-container {
-  position: fixed;
-  top: 0;
+  position: sticky;
+  top: 80px; // Cambiado de 0px a 80px para que respete el header
   left: 0;
-  z-index: 50;
-
-  width: $sidebar-width;
-  height: 100vh;
-  display: flex;
+  z-index: 20;
+  width: calc($sidebar-width + 40px);
+  height: calc(100vh - 80px);
   flex-direction: column;
   border-right: 1px solid var(--color-line);
+  align-self: flex-start;
+  background: var(--color-bg-primary);
 
   .sidebar-container-nav {
+    position: fixed;
     pointer-events: auto;
-    height: 50%;
+    height: 60vh;
+    width: $sidebar-width;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -76,4 +78,24 @@
 a.parent {
   color: var(--color-primary);
   font-weight: 700;
+}
+
+.button-contact {
+  padding: 1.5rem;
+
+  button {
+    width: 100%;
+    padding: 0.75rem 1.5rem;
+    background-color: var(--color-primary);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+
+    &:hover {
+      background-color: var(--color-primary-dark);
+    }
+  }
 }

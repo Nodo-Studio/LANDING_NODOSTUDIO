@@ -3,8 +3,12 @@
 // Gradient Background
 // Ejemplo de uso: @include gradientBg(to right, hsl(200deg 80% 50%), hsl(300deg 70% 40%));GradientBackgroundEjemplodeuso
 
-@mixin gradientBg($direction, $colors...) {
-  background-image: linear-gradient($direction, $colors...);
+@mixin gradientBg(
+  $direction: 135deg,
+  $color-start: var(--color-primary),
+  $color-end: var(--color-secondary)
+) {
+  background-image: linear-gradient($direction, $color-start 0%, $color-end 100%);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;

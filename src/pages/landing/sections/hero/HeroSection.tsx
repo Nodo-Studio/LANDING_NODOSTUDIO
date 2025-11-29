@@ -9,12 +9,7 @@ const HeroSection: React.FC = () => {
 
   return (
     <section id="inicio" className="section hero-section">
-      {content.banner_image && (
-        <div
-          className="hero-banner"
-          style={{ backgroundImage: `url(${content.banner_image})` }}
-        ></div>
-      )}
+      {content.banner_image && <div className="hero-banner"></div>}
       <div className="hero-wrapper">
         {content.title && <h1 className="hero-title">{content.title}</h1>}
       </div>
