@@ -1,23 +1,60 @@
+@use '../../../../styles/abstracts/index.scss' as *;
+
+.containerSection {
+  width: 80%;
+}
+
 .hero-section {
   height: 60vh;
   display: flex;
   flex-direction: column;
-  background-color: #ecf0f1;
   position: relative;
   overflow: hidden;
 
   .hero-wrapper {
     flex-grow: 1;
+    position: relative;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 100px;
+    text-align: left;
     z-index: 1;
-  }
+    padding: 35px 0px 25px 5%;
 
-  .hero-title {
-    font-size: 3rem;
-    color: #333;
+    &-title {
+      .hero-title {
+        font-size: 1rem;
+        color: var(--color-font-secondary);
+      }
+
+      .hero-subtitle {
+        color: var(--color-font);
+        width: 100%;
+        font-size: 3rem;
+      }
+    }
+
+    &-cards {
+      display: flex;
+      height: 100%;
+      gap: 1.5rem;
+      position: relative;
+
+      &-content {
+        border: 1px solid var(--color-line);
+        height: 80%;
+        padding: 1rem;
+        bottom: 0;
+        border-radius: 5px;
+        display: flex;
+        flex-direction: column;
+
+        span {
+          font-size: 5rem;
+        }
+      }
+    }
   }
 
   .hero-banner {

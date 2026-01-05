@@ -12,7 +12,7 @@ import './construccion.scss';
 import Reloj from '../../components/reloj/ui/Reloj';
 
 const Construccion: React.FC = () => {
-  const endDate = '2025-11-26T18:00:00';
+  const endDate = '2026-02-01T18:00:00';
 
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isVideoLoaded, setIsVideoLoaded] = useState<boolean>(false);

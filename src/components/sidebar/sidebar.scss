@@ -2,11 +2,10 @@
 
 .sidebar-container {
   position: sticky;
-  top: 80px; // Cambiado de 0px a 80px para que respete el header
   left: 0;
   z-index: 20;
-  width: calc($sidebar-width + 40px);
-  height: calc(100vh - 80px);
+  width: $sidebar-width;
+  height: auto;
   flex-direction: column;
   border-right: 1px solid var(--color-line);
   align-self: flex-start;
@@ -16,24 +15,27 @@
     position: fixed;
     pointer-events: auto;
     height: 60vh;
-    width: $sidebar-width;
+    width: 300px;
     display: flex;
+    text-align: right;
     flex-direction: column;
     justify-content: space-between;
+    width: calc($sidebar-width - 40px);
+    padding-top: 20px;
 
     ul {
       list-style: none;
       display: contents;
       flex-direction: column;
-      gap: 1rem;
     }
 
     a {
       display: block;
-      padding: 1rem 1.5rem;
+      padding: 1rem;
       text-decoration: none;
       color: var(--color-font-secondary);
-      font-weight: 500;
+      font-weight: 300;
+      font-size: 0.9rem;
       transition:
         color 0.2s ease-in-out,
         background-color 0.2s ease-in-out;
@@ -45,7 +47,6 @@
 
       &.active {
         color: var(--color-secondary-logo);
-        font-weight: 700;
       }
     }
   }
@@ -54,7 +55,6 @@
 // Estilos para la sub-lista que se despliega
 .sub-nav {
   list-style: none;
-  padding-left: 2rem;
   margin-top: 0.75rem;
   display: flex;
   flex-direction: column;
@@ -62,13 +62,12 @@
 
   a {
     font-size: 0.9rem; // Un poco más pequeño que los enlaces principales
-    font-weight: 400;
+    font-weight: 300;
 
     // Estilo para el sub-item activo
     &.active {
-      border-right: 5px solid red;
+      border-right: 3px solid red;
       color: var(--color-red-alert-opacity);
-      font-weight: 600;
       background-color: var(--color-secondary-logo-light);
     }
   }
@@ -81,18 +80,20 @@ a.parent {
 }
 
 .button-contact {
-  padding: 1.5rem;
+  width: 100%;
+  padding: 0.5rem;
 
   button {
-    width: 100%;
-    padding: 0.75rem 1.5rem;
-    background-color: var(--color-primary);
-    color: white;
     border: none;
-    border-radius: 4px;
+    width: 100%;
+    padding: 1rem;
+    background-color: var(--color-bg-primary);
+    color: var(--color-primary);
     font-weight: 600;
     cursor: pointer;
+    text-align: right;
     transition: background-color 0.2s ease-in-out;
+    border-radius: 3px;
 
     &:hover {
       background-color: var(--color-primary-dark);
