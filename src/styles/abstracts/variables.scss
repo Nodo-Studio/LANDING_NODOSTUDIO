@@ -15,24 +15,29 @@ $radius-input: 6px;
 $radius-container: 12px;
 
 //Side-Bar
-$sidebar-width: 300px;
+$sidebar-width: 220px;
 
 // ===============================================
 // CSS CUSTOM PROPERTIES - Paleta Corporativa
 // ===============================================
 :root {
+  --header-height: 64px;
+  --content-max-width: 1400px;
+  --slider-hero-height: 28vh;
+
   // PRIMARY COLORS - Paleta corporativa
-  --color-primary: #013d5a; // Azul corporativo principal (círculo 1)
-  --color-secondary: #051b2c; // Azul profundo oscuro (círculo 2)
+  --color-primary: #013d5a; // Azul corporativo principal
+  --color-secondary: #051b2c; // Azul profundo oscuro
 
   // BACKGROUND COLORS - Light theme
-  --color-bg-primary: #eaf1f6; // Fondo principal claro (círculo 5)
+  --color-bg-primary: #f3f8ff;
+  //--color-bg-primary: #eaf1f6; // Fondo principal claro
   --color-bg-secondary: #f5f8fa; // Fondo secundario más claro
 
   // ACCENT COLORS - De la paleta
-  --color-secondary-logo: #ff6b6b; // Rojo coral (círculo 3)
+  --color-secondary-logo: #ff6b6b; // Rojo coral
   --color-secondary-logo-light: rgba(255, 107, 107, 0.1); // Rojo coral 10%
-  --color-tertiary: #4ecdc4; // Turquesa (círculo 4)
+  --color-tertiary: #4ecdc4; // Turquesa
   --color-accent-light: #ffffff; // Blanco puro
 
   // FONT COLORS

@@ -20,33 +20,35 @@ const Landing: React.FC = () => {
   return (
     <>
       <Header />
-      <SliderHero />
-      <main className="landing-main">
-        <Sidebar sections={sections} activeSection={activeSection} />
-        <div className="section-wrapper">
-          <section id="inicio" className="section">
-            <HeroSection />
-          </section>
+      <div className="landing-wrapper">
+        <SliderHero />
+        <main className="landing-main">
+          <Sidebar sections={sections} activeSection={activeSection} />
+          <div className="section-wrapper">
+            <div id="inicio" className="section">
+              <HeroSection />
+            </div>
 
-          <section id="servicios" className="section">
-            {/* Mapea y renderiza un componente por cada SERVICIO */}
-            {sections
-              .find((sec) => sec.id === 'servicios')
-              ?.subItems?.map((subItem) => (
-                <ServicioItem key={subItem.id} id={subItem.id} />
-              ))}
-          </section>
-          <section id="trabajos" className="section">
-            {/* Mapea y renderiza un componente por cada TRABAJO */}
-            {sections
-              .find((sec) => sec.id === 'trabajos')
-              ?.subItems?.map((subItem) => (
-                <TrabajoItem key={subItem.id} id={subItem.id} />
-              ))}
-          </section>
-          <ContactoSection />
-        </div>
-      </main>
+            <div id="servicios" className="section">
+              {/* Mapea y renderiza un componente por cada SERVICIO */}
+              {sections
+                .find((sec) => sec.id === 'servicios')
+                ?.subItems?.map((subItem) => (
+                  <ServicioItem key={subItem.id} id={subItem.id} />
+                ))}
+            </div>
+            <div id="trabajos" className="section">
+              {/* Mapea y renderiza un componente por cada TRABAJO */}
+              {sections
+                .find((sec) => sec.id === 'trabajos')
+                ?.subItems?.map((subItem) => (
+                  <TrabajoItem key={subItem.id} id={subItem.id} />
+                ))}
+            </div>
+            <ContactoSection />
+          </div>
+        </main>
+      </div>
     </>
   );
 };

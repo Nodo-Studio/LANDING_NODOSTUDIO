@@ -9,7 +9,7 @@ const HeroSection: React.FC = () => {
   if (!content) return null;
 
   return (
-    <section id="inicio" className="section hero-section containerSection">
+    <section id="inicio" className="hero-section containerSection">
       {content.banner_image && <div className="hero-banner"></div>}
       <div className="hero-wrapper">
         <section className="hero-wrapper-title">
@@ -18,10 +18,12 @@ const HeroSection: React.FC = () => {
         </section>
         <section className="hero-wrapper-cards">
           <div className="hero-wrapper-cards-content">
-            <span>
-              <PiUserSwitchFill />
-            </span>
-            <h3>Metodología en Espiral</h3>
+            <div>
+              <span>
+                <PiUserSwitchFill />
+              </span>
+              <h3>Metodología en Espiral</h3>
+            </div>
             <p>
               Gestión proactiva de riesgos desde la conceptualización. Entregas cada 2 semanas con
               progreso verificable.

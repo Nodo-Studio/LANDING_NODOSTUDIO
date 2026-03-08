@@ -18,6 +18,7 @@ const ServicioItem: React.FC<ServicioItemProps> = ({ id }) => {
         {content.title && <h2 className="content-title">{content.title}</h2>}
         {content.description && <p className="content-description">{content.description}</p>}
       </div>
+      <div className="content-img-services"></div>
     </section>
   );
 };

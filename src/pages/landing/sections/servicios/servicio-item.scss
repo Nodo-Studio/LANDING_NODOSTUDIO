@@ -1,15 +1,12 @@
+@use '../../../../styles/abstracts/index' as *;
+
 .servicio-item {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 4rem 2rem;
-  text-align: center;
-  background-color: #F3F8FF;
 
   .content-wrapper {
-    max-width: 800px;
+    width: 100%;
   }
 
   .content-type {

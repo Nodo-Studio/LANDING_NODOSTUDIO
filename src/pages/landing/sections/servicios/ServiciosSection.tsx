@@ -5,7 +5,9 @@ import navData from '../../../../data/landing-content.json'; // Importa el JSON 
 
 const ServiciosSection: React.FC = () => {
   // Usamos el JSON principal solo para saber qué IDs de servicios mostrar y en qué orden
-  const serviciosIds = navData.sections.find((sec) => sec.id === 'servicios')?.subItems?.map((sub) => sub.id);
+  const serviciosIds = navData.sections
+    .find((sec) => sec.id === 'servicios')
+    ?.subItems?.map((sub) => sub.id);
 
   if (!serviciosIds) return null;
 
@@ -23,7 +25,9 @@ const ServiciosSection: React.FC = () => {
               <article key={id} id={id} className="servicio-item">
                 {content.type && <span className="servicio-type">{content.type}</span>}
                 {content.title && <h3 className="servicio-title">{content.title}</h3>}
-                {content.description && <p className="servicio-description">{content.description}</p>}
+                {content.description && (
+                  <p className="servicio-description">{content.description}</p>
+                )}
               </article>
             );
           })}

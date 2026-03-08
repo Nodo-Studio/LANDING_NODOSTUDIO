@@ -1,1 +1,8 @@
 @use '../styles/abstracts/index.scss' as *;
+
+.container-app {
+  padding-top: var(--header-height);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: columns;
+}
