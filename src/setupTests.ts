@@ -1,9 +1,9 @@
-import '@testing-library/jest-dom'
+import '@testing-library/jest-dom';
 
-//Mock window.matchmedia 
+//Mock window.matchmedia
 Object.defineProperty(window, 'matchMedia', {
   writable: true,
-  value: (query: string ) => ({
+  value: (query: string) => ({
     matches: false,
     media: query,
     onchange: null,
@@ -14,3 +14,10 @@ Object.defineProperty(window, 'matchMedia', {
     dispatchEvent: () => {},
   }),
 });
+
+// Mock IntersectionObserver
+global.IntersectionObserver = class IntersectionObserver {
+  observe() {}
+  unobserve() {}
+  disconnect() {}
+} as unknown as typeof IntersectionObserver;

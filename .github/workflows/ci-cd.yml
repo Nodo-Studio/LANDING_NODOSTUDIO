@@ -1,12 +1,12 @@
 name: CI/CD NODOSTUDIO
 
 # Triggers múltiples para cubrir todos los escenarios
-on: 
+on:
   # Mantener el comportamiento original: CI en push a feature branches
   push:
     branches:
-      - 'feature/**'
-  
+      - "feature/**"
+
   # Nuevo comportamiento: CI en Pull Requests
   pull_request:
     branches:
@@ -24,17 +24,17 @@ jobs:
     name: Test Feature Branch
     runs-on: ubuntu-latest
     if: github.event_name == 'push'
-    
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Setup Node.js 
+      - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
-          cache: 'npm'
-      
+          node-version: "20"
+          cache: "npm"
+
       - name: Install dependencies
         run: npm install
 
@@ -60,7 +60,7 @@ jobs:
     permissions:
       pull-requests: write
       issues: write
-    
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -68,9 +68,9 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
-          cache: 'npm'
-      
+          node-version: "20"
+          cache: "npm"
+
       - name: Install dependencies
         run: npm install
 
@@ -109,4 +109,3 @@ jobs:
               repo: context.repo.repo,
               body: `**CI/CD Status**: ${status}\n\n- Linting: ${lint}\n- Tests: ${test}\n- Build: ${build}`
             });
-

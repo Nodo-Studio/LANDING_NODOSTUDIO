@@ -3,16 +3,22 @@
 // Gradient Background
 // Ejemplo de uso: @include gradientBg(to right, hsl(200deg 80% 50%), hsl(300deg 70% 40%));GradientBackgroundEjemplodeuso
 
-@mixin gradientBg($direction, $colors...) {
-  background-image: linear-gradient($direction, $colors...);
+@mixin gradientBg(
+  $direction: 135deg,
+  $color-start: var(--color-primary),
+  $color-end: var(--color-secondary)
+) {
+  background-image: linear-gradient($direction, $color-start 0%, $color-end 100%);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
 }
 
-
-//
-@mixin glassBlur($color: var(--color-bg-primary), $opacity: 0.09, $blur: 20px) {
-  background: ($color, $opacity);
+// Glass Morphism
+// Ejemplo de uso: @include glassBlur(80%, 20px);
+@mixin glassBlur($bg-opacity: 80%, $blur: 20px) {
+  background: color-mix(in srgb, var(--color-bg-primary) $bg-opacity, transparent);
   backdrop-filter: blur($blur);
+  border: 1px solid rgb(255 255 255 / 18%);
+  box-shadow: 0 4px 24px rgb(0 0 0 / 6%);
 }
