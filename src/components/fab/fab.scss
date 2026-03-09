@@ -1,0 +1,59 @@
+@use '../../styles/abstracts/index' as *;
+
+.fab-container {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  z-index: 997;
+
+  @include respond-below('sm') {
+    bottom: 1.25rem;
+    right: 1.25rem;
+  }
+}
+
+.fab-btn {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  cursor: pointer;
+  text-decoration: none;
+
+  @include glassBlur(70%, 16px);
+
+  color: var(--color-font);
+  transition:
+    transform 0.2s ease,
+    opacity 0.2s ease,
+    box-shadow 0.2s ease;
+
+  &:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgb(0 0 0 / 12%);
+  }
+
+  &--whatsapp {
+    color: #25d366;
+    font-size: 1.4rem;
+  }
+
+  &--top {
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(8px);
+
+    &.fab-btn--visible {
+      opacity: 1;
+      pointer-events: all;
+      transform: translateY(0);
+    }
+  }
+}

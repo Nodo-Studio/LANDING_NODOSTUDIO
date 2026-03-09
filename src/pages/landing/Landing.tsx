@@ -13,6 +13,7 @@ import TrabajoItem from './sections/trabajos/TrabajoItem';
 import './landing.scss';
 import SliderHero from './sections/hero/components/SliderHero';
 import Footer from '../../components/footer/Footer';
+import Fab from '../../components/fab/Fab';
 
 const Landing: React.FC = () => {
   const activeSection = useActiveSection();
@@ -51,6 +52,7 @@ const Landing: React.FC = () => {
         </main>
         <Footer />
       </div>
+      <Fab />
     </>
   );
 };
