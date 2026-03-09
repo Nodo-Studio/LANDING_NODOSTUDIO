@@ -48,14 +48,14 @@ html::-webkit-scrollbar-track {
 }
 
 html::-webkit-scrollbar-thumb {
-  background: #eb2525;
+  background: var(--color-primary);
   border-radius: 50%;
 
   /* Bordes completamente redondeados para el thumb */
 }
 
 html::-webkit-scrollbar-thumb:hover {
-  background: #af1e1e;
+  background: var(--color-secondary);
 }
 
 /* Estilos para Firefox */

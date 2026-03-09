@@ -5,35 +5,42 @@ import { useState, useEffect } from 'react';
  * visible en el centro de la pantalla.
  * @returns El ID de la sección activa.
  */
+
 export const useActiveSection = (): string => {
   const [activeSection, setActiveSection] = useState<string>('inicio');
 
   useEffect(() => {
-    const sections = document.querySelectorAll('.section');
+    const handleScroll = () => {
+      const sections = document.querySelectorAll<HTMLElement>('.section[id]');
+      const sectionsArray = Array.from(sections);
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setActiveSection(entry.target.id);
-          }
-        });
-      },
-      {
-        rootMargin: '-50% 0px -50% 0px',
-        threshold: 0, // Se activa en cuanto un píxel es visible dentro del rootMargin.
-      },
-    );
-    sections.forEach((section) => {
-      observer.observe(section);
-    });
+      if (sectionsArray.length === 0) return;
 
-    return () => {
-      sections.forEach((section) => {
-        observer.unobserve(section);
+      // Si la página llegó al fondo, activa la última sección
+      const isAtBottom =
+        window.scrollY + window.innerHeight >= document.documentElement.scrollHeight - 50;
+
+      if (isAtBottom) {
+        setActiveSection(sectionsArray[sectionsArray.length - 1].id);
+        return;
+      }
+
+      let current = '';
+      sectionsArray.forEach((section) => {
+        const rect = section.getBoundingClientRect();
+        if (rect.top <= window.innerHeight * 0.35) {
+          current = section.id;
+        }
       });
+
+      if (current) setActiveSection(current);
     };
-  }, []); // El array de dependencias vacío asegura que este efecto se ejecute solo una vez.
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
+
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return activeSection;
 };

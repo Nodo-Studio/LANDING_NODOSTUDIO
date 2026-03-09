@@ -31,7 +31,7 @@
 
   a {
     display: block;
-    padding: 1.5rem 0.75rem;
+    padding: 1.5rem 0.75rem 1.5rem 2.5rem;
     text-decoration: none;
     color: var(--color-font-muted);
     font-size: 0.72rem;
@@ -109,24 +109,42 @@
 a.parent {
   color: var(--color-font);
   font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+}
+.sidebar-container-nav > div:first-child > ul > li > a {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.68rem;
 }
 
 .button-contact {
   button {
     width: 100%;
     padding: 1.1rem 1.25rem;
-    @include gradientBg(); // mismo gradiente coherente con el resto
-    color: #fff;
-    border: none;
-    border-radius: 0; // borde a borde, sin radius
+    background: transparent;
+    color: var(--color-font-secondary);
+    border: 1px solid var(--color-line);
+    border-radius: 0;
     font-size: 0.78rem;
     font-weight: 700;
     letter-spacing: 0.06em;
     cursor: pointer;
-    transition: opacity 0.2s ease;
+    transition:
+      background 0.2s ease,
+      color 0.2s ease,
+      border-color 0.2s ease;
 
     &:hover {
-      opacity: 0.8;
+      @include gradientBg();
+      color: var(--color-bg-secondary);
+      border: none;
+    }
+    &.active {
+      @include gradientBg();
+      color: #fff;
+      border: none;
     }
   }
 }

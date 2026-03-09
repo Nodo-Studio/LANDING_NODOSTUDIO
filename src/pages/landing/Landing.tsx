@@ -12,6 +12,7 @@ import TrabajoItem from './sections/trabajos/TrabajoItem';
 
 import './landing.scss';
 import SliderHero from './sections/hero/components/SliderHero';
+import Footer from '../../components/footer/Footer';
 
 const Landing: React.FC = () => {
   const activeSection = useActiveSection();
@@ -29,7 +30,7 @@ const Landing: React.FC = () => {
               <HeroSection />
             </div>
 
-            <div id="servicios" className="section">
+            <div id="servicios">
               {/* Mapea y renderiza un componente por cada SERVICIO */}
               {sections
                 .find((sec) => sec.id === 'servicios')
@@ -37,7 +38,7 @@ const Landing: React.FC = () => {
                   <ServicioItem key={subItem.id} id={subItem.id} />
                 ))}
             </div>
-            <div id="trabajos" className="section">
+            <div id="trabajos">
               {/* Mapea y renderiza un componente por cada TRABAJO */}
               {sections
                 .find((sec) => sec.id === 'trabajos')
@@ -48,6 +49,7 @@ const Landing: React.FC = () => {
             <ContactoSection />
           </div>
         </main>
+        <Footer />
       </div>
     </>
   );

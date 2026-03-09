@@ -23,12 +23,12 @@
       "title": "Trabajos",
       "subItems": [
         {
-          "id": "proyecto-alpha",
-          "title": "Proyecto Alpha"
+          "id": "le-vegetalien",
+          "title": "Le Végétalien"
         },
         {
-          "id": "proyecto-beta",
-          "title": "Proyecto Beta"
+          "id": "fintrack",
+          "title": "Fintrack"
         }
       ]
     }
@@ -40,8 +40,12 @@
       "banner_image": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1920&q=80"
     },
     "contacto": {
-      "title": "CONTACTO",
-      "description": "Contenido de la sección de contacto."
+      "title": "¿Listo para escalar tu negocio digital?",
+      "email": "hola@nodostudio.com.co",
+      "phone": "+57 312 325 0664",
+      "location": "Bogotá, Colombia",
+      "availability": "Disponibilidad remota global",
+      "cta": "Escalar"
     }
   }
 }

@@ -14,8 +14,12 @@
   background-position: center;
 }
 
-//
-@mixin glassBlur($color: var(--color-bg-primary), $opacity: 0.09, $blur: 20px) {
-  background: ($color, $opacity);
+// Glass Morphism
+// Ejemplo de uso: @include glassBlur(80%, 20px);
+@mixin glassBlur($bg-opacity: 80%, $blur: 20px) {
+  background: color-mix(in srgb, var(--color-bg-primary) $bg-opacity, transparent);
   backdrop-filter: blur($blur);
+  -webkit-backdrop-filter: blur($blur);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
 }

@@ -1,0 +1,47 @@
+@use '../../styles/abstracts/index' as *;
+
+.footer {
+  @include gradientBg();
+  margin-left: $sidebar-width;
+
+  @include respond-below('lg') {
+    margin-left: 0;
+  }
+}
+
+.footer-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.1rem 3rem;
+
+  @include respond-below('md') {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1.5rem;
+    text-align: center;
+  }
+}
+
+.footer-copy {
+  font-size: 0.78rem;
+  color: var(--color-font-muted);
+}
+
+.footer-social {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+
+  a {
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 1rem;
+    transition: color 0.2s ease;
+    display: flex;
+    align-items: center;
+
+    &:hover {
+      color: var(--color-tertiary);
+    }
+  }
+}
