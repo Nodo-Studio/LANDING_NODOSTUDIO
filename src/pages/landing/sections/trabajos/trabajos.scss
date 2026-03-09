@@ -1,0 +1,51 @@
+.trabajos-section {
+  min-height: 100vh;
+  padding: 6rem 2rem;
+  background-color: #fff0f5; // LavenderBlush
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .trabajos-wrapper {
+    width: 100%;
+    max-width: 1200px;
+    text-align: center;
+  }
+
+  .section-title {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: #333;
+  }
+
+  .trabajos-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+
+  .trabajo-item {
+    padding: 2rem;
+    background-color: rgb(255 255 255 / 60%);
+    border-radius: 8px;
+    text-align: left;
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: translateY(-5px);
+    }
+  }
+
+  .trabajo-type {
+    display: block;
+    font-size: 0.9rem;
+    color: #555;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+  }
+
+  .trabajo-title {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+}

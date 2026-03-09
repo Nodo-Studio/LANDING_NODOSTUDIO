@@ -1,0 +1,154 @@
+@use '../../styles/abstracts/index.scss' as *;
+
+.sidebar-container {
+  position: fixed;
+  top: calc(var(--header-height) + var(--slider-hero-height));
+  left: 0;
+  height: calc(100vh - var(--header-height) - var(--slider-hero-height));
+  width: $sidebar-width;
+  flex-shrink: 0;
+  overflow: hidden auto;
+  background-color: var(--color-bg-primary);
+
+  // Ocultar en tablet y móvil
+  @include respond-below('lg') {
+    display: none;
+  }
+}
+
+.sidebar-container-nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+
+  > div:first-child > ul {
+    list-style: none;
+    display: flex; // era display: contents — bug que rompe el layout
+    flex-direction: column;
+  }
+
+  a {
+    display: block;
+    padding: 1.5rem 0.75rem 1.5rem 2.5rem;
+    text-decoration: none;
+    color: var(--color-font-muted);
+    font-size: 0.72rem;
+    font-weight: 400;
+    line-height: 1.4;
+    border-bottom: 1px solid var(--color-line);
+    align-items: center;
+    transition:
+      color 0.2s ease,
+      border-color 0.2s ease;
+
+    // Flecha oculta por defecto
+    &::after {
+      content: '›';
+      font-size: 1.1rem;
+      opacity: 0;
+      transition: opacity 0.2s ease;
+      padding-left: 0.75rem;
+      align-self: center;
+    }
+
+    &:hover {
+      color: var(--color-primary);
+      background-color: var(--color-bg-transparent);
+    }
+
+    &.active {
+      font-weight: 600;
+      border-bottom: 1px solid var(--color-line);
+
+      &::after {
+        opacity: 1;
+        color: var(--color-primary);
+        border-left-color: var(--color-line);
+        align-self: center;
+      }
+    }
+  }
+}
+
+.sub-nav {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+
+  a {
+    padding: 0.85rem 1.25rem 0.85rem 2rem; // indentado para jerarquía visual
+
+    &::after {
+      content: '·'; // punto en vez de flecha para sub-items
+      font-size: 1.2rem;
+      opacity: 0;
+      padding-left: 0.75rem;
+      border-left: 1px solid rgb(255 255 255 / 20%);
+    }
+
+    &:hover {
+      background-color: var(--color-bg-transparent);
+    }
+
+    &.active {
+      @include gradientBg; // mismo gradiente también en sub-items
+
+      color: #fff;
+      font-weight: 600;
+      border-bottom-color: transparent;
+
+      &::after {
+        opacity: 1;
+        color: var(--color-tertiary);
+      }
+    }
+  }
+}
+
+a.parent {
+  color: var(--color-font);
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+}
+
+.sidebar-container-nav > div:first-child > ul > li > a {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.68rem;
+}
+
+.button-contact {
+  button {
+    width: 100%;
+    padding: 1.1rem 1.25rem;
+    background: transparent;
+    color: var(--color-font-secondary);
+    border: 1px solid var(--color-line);
+    border-radius: 0;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    cursor: pointer;
+    transition:
+      background 0.2s ease,
+      color 0.2s ease,
+      border-color 0.2s ease;
+
+    &:hover {
+      @include gradientBg;
+
+      color: var(--color-bg-secondary);
+      border: none;
+    }
+
+    &.active {
+      @include gradientBg;
+
+      color: #fff;
+      border: none;
+    }
+  }
+}
