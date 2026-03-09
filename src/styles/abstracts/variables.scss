@@ -14,7 +14,7 @@ $padding-input: 1rem;
 $radius-input: 6px;
 $radius-container: 12px;
 
-//Side-Bar
+// Side-Bar
 $sidebar-width: 220px;
 
 // ===============================================
@@ -31,14 +31,15 @@ $sidebar-width: 220px;
 
   // BACKGROUND COLORS - Light theme
   --color-bg-primary: #f3f8ff;
-  //--color-bg-primary: #eaf1f6; // Fondo principal claro
+
+  // --color-bg-primary: #eaf1f6; // Fondo principal claro
   --color-bg-secondary: #f5f8fa; // Fondo secundario más claro
 
   // ACCENT COLORS - De la paleta
   --color-secondary-logo: #ff6b6b; // Rojo coral
-  --color-secondary-logo-light: rgba(255, 107, 107, 0.1); // Rojo coral 10%
+  --color-secondary-logo-light: rgb(255 107 107 / 10%); // Rojo coral 10%
   --color-tertiary: #4ecdc4; // Turquesa
-  --color-accent-light: #ffffff; // Blanco puro
+  --color-accent-light: #fff; // Blanco puro
 
   // FONT COLORS
   --color-font: #051b2c; // Texto principal (azul profundo)
@@ -46,10 +47,10 @@ $sidebar-width: 220px;
   --color-font-muted: #6b8a9b; // Texto deshabilitado
 
   // INTERACTIVE STATES
-  --color-line: rgba(5, 27, 44, 0.15); // Líneas y bordes
-  --color-bg-transparent: rgba(1, 61, 90, 0.05); // Fondos transparentes azul
-  --color-hover: rgba(78, 205, 196, 0.1); // Estados hover turquesa
-  --color-focus: rgba(255, 107, 107, 0.2); // Estados focus rojo coral
+  --color-line: rgb(5 27 44 / 15%); // Líneas y bordes
+  --color-bg-transparent: rgb(1 61 90 / 5%); // Fondos transparentes azul
+  --color-hover: rgb(78 205 196 / 10%); // Estados hover turquesa
+  --color-focus: rgb(255 107 107 / 20%); // Estados focus rojo coral
 
   // NEUTRAL SCALE
   --color-text: #051b2c; // Texto principal
@@ -58,25 +59,25 @@ $sidebar-width: 220px;
   --color-fifth: #fafcfd; // Fondo quinario
 
   // INTERACTION STATES
-  --color-bg-transparent-light: rgba(78, 205, 196, 0.08); // Turquesa 8%
-  --color-hover-secondary: rgba(1, 61, 90, 0.08); // Azul corporativo 8%
-  --color-active: rgba(255, 107, 107, 0.15); // Rojo coral 15%
+  --color-bg-transparent-light: rgb(78 205 196 / 8%); // Turquesa 8%
+  --color-hover-secondary: rgb(1 61 90 / 8%); // Azul corporativo 8%
+  --color-active: rgb(255 107 107 / 15%); // Rojo coral 15%
 
   // ALERTS - Usando la paleta
   --color-alert-red: #ff6b6b; // Error (rojo coral)
-  --color-alert-red-bg: rgba(255, 107, 107, 0.1); // Fondo de error
+  --color-alert-red-bg: rgb(255 107 107 / 10%); // Fondo de error
   --color-alert-yellow: #ffb84d; // Warning amarillo
-  --color-alert-yellow-bg: rgba(255, 184, 77, 0.1); // Fondo warning
+  --color-alert-yellow-bg: rgb(255 184 77 / 10%); // Fondo warning
   --color-alert-green: #4ecdc4; // Success (turquesa)
-  --color-alert-green-bg: rgba(78, 205, 196, 0.1); // Fondo success
+  --color-alert-green-bg: rgb(78 205 196 / 10%); // Fondo success
   --color-alert-info: #013d5a; // Info (azul principal)
-  --color-alert-info-bg: rgba(1, 61, 90, 0.1); // Fondo info
+  --color-alert-info-bg: rgb(1 61 90 / 10%); // Fondo info
 
   // ALERT OPACITY VARIANTS
-  --color-green-alert-opacity: rgba(78, 205, 196, 0.166); // 16.6%
-  --color-red-alert-opacity: rgba(255, 107, 107, 0.166); // 16.6%
-  --color-yellow-alert-opacity: rgba(255, 184, 77, 0.166); // 16.6%
-  --color-blue-alert-opacity: rgba(1, 61, 90, 0.166); // 16.6%
+  --color-green-alert-opacity: rgb(78 205 196 / 16.6%); // 16.6%
+  --color-red-alert-opacity: rgb(255 107 107 / 16.6%); // 16.6%
+  --color-yellow-alert-opacity: rgb(255 184 77 / 16.6%); // 16.6%
+  --color-blue-alert-opacity: rgb(1 61 90 / 16.6%); // 16.6%
 }
 
 // ===============================================
@@ -94,7 +95,7 @@ $sidebar-width: 220px;
 
   // ACCENT COLORS - Maintained for brand consistency
   --color-secondary-logo: #ff8585; // Rojo coral más claro
-  --color-secondary-logo-light: rgba(255, 133, 133, 0.15); // Más visible en dark
+  --color-secondary-logo-light: rgb(255 133 133 / 15%); // Más visible en dark
   --color-tertiary: #5ed9d1; // Turquesa más claro
   --color-accent-light: #eaf1f6; // Casi blanco
 
@@ -104,10 +105,10 @@ $sidebar-width: 220px;
   --color-font-muted: #6b8a9b; // Texto deshabilitado
 
   // INTERACTIVE STATES - Dark adapted
-  --color-line: rgba(234, 241, 246, 0.15); // Líneas más visibles en oscuro
-  --color-bg-transparent: rgba(78, 205, 196, 0.08); // Fondos transparentes
-  --color-hover: rgba(255, 133, 133, 0.15); // Estados hover más visibles
-  --color-focus: rgba(94, 217, 209, 0.25); // Estados focus
+  --color-line: rgb(234 241 246 / 15%); // Líneas más visibles en oscuro
+  --color-bg-transparent: rgb(78 205 196 / 8%); // Fondos transparentes
+  --color-hover: rgb(255 133 133 / 15%); // Estados hover más visibles
+  --color-focus: rgb(94 217 209 / 25%); // Estados focus
 
   // NEUTRAL SCALE - Dark adapted
   --color-text: #eaf1f6; // Texto claro
@@ -116,23 +117,23 @@ $sidebar-width: 220px;
   --color-fifth: #051b2c; // Fondo más oscuro
 
   // INTERACTION STATES - Enhanced for dark mode
-  --color-bg-transparent-light: rgba(94, 217, 209, 0.12); // Turquesa 12%
-  --color-hover-secondary: rgba(255, 133, 133, 0.12); // Rojo coral 12%
-  --color-active: rgba(94, 217, 209, 0.2); // Turquesa 20%
+  --color-bg-transparent-light: rgb(94 217 209 / 12%); // Turquesa 12%
+  --color-hover-secondary: rgb(255 133 133 / 12%); // Rojo coral 12%
+  --color-active: rgb(94 217 209 / 20%); // Turquesa 20%
 
   // ALERTS - Dark mode optimized
   --color-alert-red: #ff8585; // Más claro para contraste
-  --color-alert-red-bg: rgba(255, 133, 133, 0.15); // Fondo error dark
+  --color-alert-red-bg: rgb(255 133 133 / 15%); // Fondo error dark
   --color-alert-yellow: #ffc266; // Más claro
-  --color-alert-yellow-bg: rgba(255, 194, 102, 0.15); // Fondo warning dark
+  --color-alert-yellow-bg: rgb(255 194 102 / 15%); // Fondo warning dark
   --color-alert-green: #5ed9d1; // Turquesa más claro
-  --color-alert-green-bg: rgba(94, 217, 209, 0.15); // Fondo success dark
+  --color-alert-green-bg: rgb(94 217 209 / 15%); // Fondo success dark
   --color-alert-info: #4a9bc7; // Azul más claro
-  --color-alert-info-bg: rgba(74, 155, 199, 0.15); // Fondo info dark
+  --color-alert-info-bg: rgb(74 155 199 / 15%); // Fondo info dark
 
   // ALERT OPACITY VARIANTS - Dark adapted
-  --color-green-alert-opacity: rgba(94, 217, 209, 0.2); // 20%
-  --color-red-alert-opacity: rgba(255, 133, 133, 0.2); // 20%
-  --color-yellow-alert-opacity: rgba(255, 194, 102, 0.2); // 20%
-  --color-blue-alert-opacity: rgba(74, 155, 199, 0.2); // 20%
+  --color-green-alert-opacity: rgb(94 217 209 / 20%); // 20%
+  --color-red-alert-opacity: rgb(255 133 133 / 20%); // 20%
+  --color-yellow-alert-opacity: rgb(255 194 102 / 20%); // 20%
+  --color-blue-alert-opacity: rgb(74 155 199 / 20%); // 20%
 }

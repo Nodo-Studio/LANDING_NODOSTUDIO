@@ -26,7 +26,8 @@
 }
 
 .trabajo-explorar {
-  @include gradientBg();
+  @include gradientBg;
+
   color: #fff;
   border: none;
   font-size: 0.82rem;
@@ -153,6 +154,7 @@
     }
   }
 }
+
 // ── Tags de tecnología ──
 .trabajo-tags {
   display: flex;

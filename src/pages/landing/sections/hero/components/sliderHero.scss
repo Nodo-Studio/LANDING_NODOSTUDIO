@@ -8,10 +8,10 @@
   align-items: center;
   padding: 0 2.5rem; // mismo padding que el header para que quede alineado
 
-  @include gradientBg();
+  @include gradientBg;
 
   h2 {
-    color: rgba(255, 255, 255, 0.2); // texto placeholder casi invisible
+    color: rgb(255 255 255 / 20%); // texto placeholder casi invisible
     font-size: 0.85rem;
     font-weight: 400;
     letter-spacing: 0.15em;

@@ -7,8 +7,7 @@
   height: calc(100vh - var(--header-height) - var(--slider-hero-height));
   width: $sidebar-width;
   flex-shrink: 0;
-  overflow-y: auto;
-  overflow-x: hidden;
+  overflow: hidden auto;
   background-color: var(--color-bg-primary);
 
   // Ocultar en tablet y móvil
@@ -43,7 +42,7 @@
       color 0.2s ease,
       border-color 0.2s ease;
 
-    //Flecha oculta por defecto
+    // Flecha oculta por defecto
     &::after {
       content: '›';
       font-size: 1.1rem;
@@ -85,7 +84,7 @@
       font-size: 1.2rem;
       opacity: 0;
       padding-left: 0.75rem;
-      border-left: 1px solid rgba(255, 255, 255, 0.2);
+      border-left: 1px solid rgb(255 255 255 / 20%);
     }
 
     &:hover {
@@ -93,7 +92,8 @@
     }
 
     &.active {
-      @include gradientBg(); // mismo gradiente también en sub-items
+      @include gradientBg; // mismo gradiente también en sub-items
+
       color: #fff;
       font-weight: 600;
       border-bottom-color: transparent;
@@ -113,6 +113,7 @@ a.parent {
   font-size: 0.68rem;
   letter-spacing: 0.08em;
 }
+
 .sidebar-container-nav > div:first-child > ul > li > a {
   text-transform: uppercase;
   letter-spacing: 0.08em;
@@ -137,12 +138,15 @@ a.parent {
       border-color 0.2s ease;
 
     &:hover {
-      @include gradientBg();
+      @include gradientBg;
+
       color: var(--color-bg-secondary);
       border: none;
     }
+
     &.active {
-      @include gradientBg();
+      @include gradientBg;
+
       color: #fff;
       border: none;
     }

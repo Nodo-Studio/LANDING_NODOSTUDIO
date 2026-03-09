@@ -1,7 +1,8 @@
 @use '../../../../styles/abstracts/index' as *;
 
 .contacto-section {
-  @include gradientBg();
+  @include gradientBg;
+
   border-bottom: none;
 }
 
@@ -47,7 +48,7 @@
 
 .contacto-link {
   font-size: 0.88rem;
-  color: rgba(255, 255, 255, 0.65);
+  color: rgb(255 255 255 / 65%);
   text-decoration: none;
   transition: color 0.2s ease;
 
@@ -63,7 +64,7 @@
 
   span {
     font-size: 0.88rem;
-    color: rgba(255, 255, 255, 0.65);
+    color: rgb(255 255 255 / 65%);
   }
 }
 
@@ -97,14 +98,14 @@
   label {
     font-size: 0.75rem;
     font-weight: 600;
-    color: rgba(255, 255, 255, 0.6);
+    color: rgb(255 255 255 / 60%);
     letter-spacing: 0.04em;
   }
 
   input,
   textarea {
-    background-color: rgba(255, 255, 255, 0.08);
-    border: 1px solid rgba(255, 255, 255, 0.15);
+    background-color: rgb(255 255 255 / 8%);
+    border: 1px solid rgb(255 255 255 / 15%);
     border-radius: 4px;
     padding: $padding-input;
     font-size: 0.88rem;
@@ -117,12 +118,12 @@
     resize: none;
 
     &::placeholder {
-      color: rgba(255, 255, 255, 0.3);
+      color: rgb(255 255 255 / 30%);
     }
 
     &:focus {
       border-color: var(--color-tertiary);
-      background-color: rgba(255, 255, 255, 0.12);
+      background-color: rgb(255 255 255 / 12%);
     }
   }
 }

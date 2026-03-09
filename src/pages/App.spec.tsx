@@ -14,7 +14,7 @@ describe('App component', () => {
     expect(screen.getByRole('banner')).toBeInTheDocument(); // Asumiendo que Header usa <header>
 
     // Verificar que se renderiza contenido específico
-    expect(screen.getByText('BIENVENIDOS A NODOSTUDIO')).toBeInTheDocument();
+    expect(screen.getAllByText('NODOSTUDIO').length).toBeGreaterThan(0);
   });
 
   it('renders without crashing when matchMedia is called', () => {

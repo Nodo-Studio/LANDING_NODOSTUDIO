@@ -32,6 +32,10 @@
       list-style-type: none;
       gap: 2.5rem;
 
+      @include respond-below('lg') {
+        display: none;
+      }
+
       li {
         font-size: 0.85rem;
         cursor: pointer;
@@ -59,20 +63,14 @@
 
   &.scrolled {
     @include glassBlur(60%, 20px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+
+    border-bottom: 1px solid rgb(255 255 255 / 18%);
     transition:
       background 0.3s ease,
       backdrop-filter 0.3s ease;
   }
 }
 
-.container-header-nav {
-  ul {
-    @include respond-below('lg') {
-      display: none;
-    }
-  }
-}
 
 .container-header-hamburger {
   display: none;
@@ -103,6 +101,7 @@
     position: fixed;
     inset: 0;
     z-index: 998;
+
     @include glassBlur(75%, 28px);
 
     opacity: 0;
