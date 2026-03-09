@@ -1,10 +1,10 @@
 export interface VideoSourceProps {
   src: string;
-  type: 'video/mp4' | 'video/webm' | 'video/ogg'; 
+  type: 'video/mp4' | 'video/webm' | 'video/ogg';
 }
 
 export interface HeroVideoProps {
-  source: VideoSourceProps[],
+  source: VideoSourceProps[];
   poster: string;
   fallbackImg: string;
 }
@@ -12,5 +12,5 @@ export interface HeroVideoProps {
 export interface VideoLoadState {
   isLoaded: boolean;
   hasError: boolean;
-  shouldShow: boolean; 
+  shouldShow: boolean;
 }

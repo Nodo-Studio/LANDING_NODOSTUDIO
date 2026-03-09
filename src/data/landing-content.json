@@ -1,0 +1,51 @@
+{
+  "sections": [
+    {
+      "id": "inicio",
+      "title": "Inicio"
+    },
+    {
+      "id": "servicios",
+      "title": "Servicios",
+      "subItems": [
+        {
+          "id": "diseno-de-software",
+          "title": "Diseño de Software"
+        },
+        {
+          "id": "desarrollo-de-software",
+          "title": "Desarrollo de Software"
+        }
+      ]
+    },
+    {
+      "id": "trabajos",
+      "title": "Trabajos",
+      "subItems": [
+        {
+          "id": "le-vegetalien",
+          "title": "Le Végétalien"
+        },
+        {
+          "id": "fintrack",
+          "title": "Fintrack"
+        }
+      ]
+    }
+  ],
+  "content_blocks": {
+    "inicio": {
+      "title": "NODOSTUDIO",
+      "subtitle": "Creamos soluciones escalables donde los clientes se apropian de su negocio digital",
+      "banner_image": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1920&q=80"
+    },
+    "contacto": {
+      "title": "¿Listo para escalar tu negocio digital?",
+      "email": "hola@nodostudio.com.co",
+      "phone": "+57 312 325 0664",
+      "location": "Bogotá, Colombia",
+      "availability": "Disponibilidad remota global",
+      "cta": "Escalar"
+    }
+  }
+}
